@@ -40,14 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="core\api\Constants.cs" />
-    <Compile Include="core\log\LogEntry.cs" />
-    <Compile Include="core\log\StreamLogSerializer.cs" />
-    <Compile Include="core\log\IFullLogSerializer.cs" />
-    <Compile Include="core\api\ILogger.cs" />
-    <Compile Include="core\api\IModule.cs" />
-    <Compile Include="core\api\State.cs" />
-    <Compile Include="core\api\StateMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
