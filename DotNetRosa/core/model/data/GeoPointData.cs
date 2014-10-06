@@ -126,7 +126,7 @@ namespace org.javarosa.core.model.data
 				this.gp[i] = MISSING_VALUE;
 			}
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		//UPGRADE_ISSUE: The equivalent in .NET for method 'java.lang.Object.clone' returns a different type. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1224'"
 		public virtual System.Object Clone()
@@ -140,7 +140,7 @@ namespace org.javarosa.core.model.data
 		*
 		* @see org.javarosa.core.model.data.IAnswerData#getDisplayText()
 		*/
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		
 		
@@ -149,11 +149,11 @@ namespace org.javarosa.core.model.data
 		*
 		* @see org.javarosa.core.model.data.IAnswerData#getValue()
 		*/
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		//UPGRADE_TODO: Class 'java.io.DataInputStream' was converted to 'System.IO.BinaryReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioDataInputStream'"
 		public virtual void  readExternal(System.IO.BinaryReader in_Renamed, PrototypeFactory pf)
@@ -169,7 +169,7 @@ namespace org.javarosa.core.model.data
 				this.gp[i] = MISSING_VALUE;
 			}
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		//UPGRADE_TODO: Class 'java.io.DataOutputStream' was converted to 'System.IO.BinaryWriter' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioDataOutputStream'"
 		public virtual void  writeExternal(System.IO.BinaryWriter out_Renamed)
@@ -180,13 +180,13 @@ namespace org.javarosa.core.model.data
 				ExtUtil.writeDecimal(out_Renamed, gp[i]);
 			}
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		public virtual UncastData uncast()
 		{
 			return new UncastData(DisplayText);
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		public virtual GeoPointData cast(UncastData data)
 		{
@@ -197,9 +197,9 @@ namespace org.javarosa.core.model.data
 				ret[i] = MISSING_VALUE;
 			}
 			
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			int i2 = 0;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String s: choices)
 			{
 				double d = Double.parseDouble(s);
@@ -208,14 +208,14 @@ namespace org.javarosa.core.model.data
 			}
 			return new GeoPointData(ret);
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		public virtual System.Boolean toBoolean()
 		{
 			// return whether or not the Geopoint has been set
 			return (gp[0] != 0.0 || gp[1] != 0.0 || gp[2] != 0.0 || gp[3] != 0.0);
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		public virtual System.Double toNumeric()
 		{
@@ -228,7 +228,7 @@ namespace org.javarosa.core.model.data
 			}
 			return gp[3];
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		public override System.String ToString()
 		{

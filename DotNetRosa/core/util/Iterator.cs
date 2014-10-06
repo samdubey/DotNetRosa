@@ -4,11 +4,11 @@ namespace org.javarosa.core.util
 {
 	
 	/// <summary> Interface for iterating through a set of records from an IStorageUtility</summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	interface Iterator < E >
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	{
 	
 	/// <summary> NOTE: if the underlying IStorageUtility is modified while this iterator is being iterated through,
@@ -30,7 +30,7 @@ namespace org.javarosa.core.util
 	/// </summary>
 	/// <returns> number of records
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int numRecords();
 	
 	/// <summary> Return the ID of the next record in the set without advancing the iterator.
@@ -42,7 +42,7 @@ namespace org.javarosa.core.util
 	/// <summary> was created
 	/// </summary>
 	/// <throws>  IllegalStateException if all records have already been iterated through </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int peekID();
 	
 	/// <summary> Return the ID of the next record in the set. Advance the iteration cursor by one.
@@ -54,7 +54,7 @@ namespace org.javarosa.core.util
 	/// <summary> was created
 	/// </summary>
 	/// <throws>  IllegalStateException if all records have already been iterated through </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int nextID();
 	
 	/// <summary> Return the next record in the set. Advance the iteration cursor by one.
@@ -63,7 +63,7 @@ namespace org.javarosa.core.util
 	/// <returns> object representation of next record
 	/// </returns>
 	/// <throws>  IllegalStateException if all records have already been iterated through </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	E nextRecord();
 	
 	/// <summary> Return whether the set has more records to iterate through
@@ -71,8 +71,8 @@ namespace org.javarosa.core.util
 	/// </summary>
 	/// <returns> true if there are more records to iterate though.
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	boolean hasMore();
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	}
 }

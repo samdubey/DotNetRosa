@@ -242,11 +242,11 @@ namespace org.javarosa.core.model
 		private System.String textID; /* The id (ref) pointing to the localized values of (pic-URIs,audio-URIs,text) */
 		private System.String helpInnerText;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeElement > additionalAttributes = new Vector < TreeElement >();
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < SelectChoice > choices;
+		private List< TreeElement > additionalAttributes = new List< TreeElement >();
+		
+		
+		private List< SelectChoice > choices;
 		private ItemsetBinding dynamicChoices;
 		
 		internal System.Collections.ArrayList observers;
@@ -279,16 +279,16 @@ namespace org.javarosa.core.model
 			return null;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeElement > getAdditionalAttributes()
+		
+		public List< TreeElement > getAdditionalAttributes()
 		
 		
 		public virtual void  addSelectChoice(SelectChoice choice)
 		{
 			if (choices == null)
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				choices = new Vector < SelectChoice >();
+				
+				choices = new List< SelectChoice >();
 			}
 			choice.setIndex(choices.size());
 			choices.addElement(choice);
@@ -316,8 +316,8 @@ namespace org.javarosa.core.model
 			}
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < SelectChoice > getChoices()
+		
+		public List< SelectChoice > getChoices()
 		
 		public virtual SelectChoice getChoice(int i)
 		{

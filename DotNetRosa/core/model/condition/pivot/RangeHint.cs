@@ -63,17 +63,17 @@ namespace org.javarosa.core.model.condition.pivot
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< T extends IAnswerData > implements ConstraintHint
 		
 		public virtual void  init(EvaluationContext c, IConditionExpr conditional, FormInstance instance)
 		{
 			
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < CmpPivot > internalPivots = new Vector < CmpPivot >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
+			
+			List< CmpPivot > internalPivots = new List< CmpPivot >();
+			
 			for(Object p: pivots)
 			{
 				if (!(p is CmpPivot))
@@ -89,7 +89,7 @@ namespace org.javarosa.core.model.condition.pivot
 				throw new UnpivotableExpressionException();
 			}
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(CmpPivot pivot: internalPivots)
 			{
 				evaluatePivot(pivot, conditional, c, instance);

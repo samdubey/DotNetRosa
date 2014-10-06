@@ -84,7 +84,7 @@ namespace org.javarosa.core.reference
 		/* (non-Javadoc)
 		* @see org.javarosa.core.services.locale.LocaleDataSource#getLocalizedText()
 		*/
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public OrderedMap < String, String > getLocalizedText()
 		
 		/* (non-Javadoc)

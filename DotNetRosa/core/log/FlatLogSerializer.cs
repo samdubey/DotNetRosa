@@ -37,7 +37,7 @@ namespace org.javarosa.core.log
 			* @see org.javarosa.core.log.ILogSerializer#serializeLog(org.javarosa.core.log.IncidentLog)
 			*/
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< String >
 		private System.String serializeLog(LogEntry log)
 		{

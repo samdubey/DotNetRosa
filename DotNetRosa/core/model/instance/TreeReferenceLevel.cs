@@ -30,15 +30,15 @@ namespace org.javarosa.core.model.instance
 		
 		private System.String name;
 		private int multiplicity = MULT_UNINIT;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < XPathExpression > predicates;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		private List< XPathExpression > predicates;
+		
+		
 		private static CacheTable < TreeReferenceLevel > refs;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void attachCacheTable(CacheTable < TreeReferenceLevel > refs)
 		
 		public TreeReferenceLevel()
@@ -47,8 +47,8 @@ namespace org.javarosa.core.model.instance
 		}
 		
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public TreeReferenceLevel(String name, int multiplicity, Vector < XPathExpression > predicates)
+		
+		public TreeReferenceLevel(String name, int multiplicity, List< XPathExpression > predicates)
 		
 		public TreeReferenceLevel(System.String name, int multiplicity):this(name, multiplicity, null)
 		{
@@ -71,11 +71,11 @@ namespace org.javarosa.core.model.instance
 		}
 		
 		public TreeReferenceLevel setPredicates;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		(Vector < XPathExpression > xpe)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < XPathExpression > getPredicates()
+		(List< XPathExpression > xpe)
+		
+		
+		public List< XPathExpression > getPredicates()
 		
 		public virtual TreeReferenceLevel shallowCopy()
 		{
@@ -94,8 +94,8 @@ namespace org.javarosa.core.model.instance
 		{
 			name = ExtUtil.nullIfEmpty(ExtUtil.readString(in_Renamed));
 			multiplicity = ExtUtil.readInt(in_Renamed);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			predicates = ExtUtil.nullIfEmpty((Vector < XPathExpression >) ExtUtil.read(in, new ExtWrapListPoly()));
+			
+			predicates = ExtUtil.nullIfEmpty((List< XPathExpression >) ExtUtil.read(in, new ExtWrapListPoly()));
 		}
 		
 		
@@ -112,7 +112,7 @@ namespace org.javarosa.core.model.instance
 			int predPart = 0;
 			if (predicates != null)
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(XPathExpression xpe: predicates)
 				{
 					predPart ^= xpe.hashCode();

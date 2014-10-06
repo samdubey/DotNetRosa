@@ -358,8 +358,8 @@ namespace org.javarosa.form.api
 		/// </returns>
 		public virtual FormEntryCaption[] getCaptionHierarchy(FormIndex index)
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < FormEntryCaption > captions = new Vector < FormEntryCaption >();
+			
+			List< FormEntryCaption > captions = new List< FormEntryCaption >();
 			FormIndex remaining = index;
 			while (remaining != null)
 			{
@@ -589,7 +589,7 @@ namespace org.javarosa.form.api
 			
 			//get the set of nested groups that this question is in.
 			FormEntryCaption[] captions = getCaptionHierarchy(index);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(FormEntryCaption caption: captions)
 			{
 				
@@ -610,8 +610,8 @@ namespace org.javarosa.form.api
 		public virtual FormIndex[] getCompoundIndices(FormIndex container)
 		{
 			//ArrayLists are a no-go for J2ME
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < FormIndex > indices = new Vector < FormIndex >();
+			
+			List< FormIndex > indices = new List< FormIndex >();
 			FormIndex walker = incrementIndex(container);
 			while (FormIndex.isSubElement(container, walker))
 			{
@@ -924,7 +924,7 @@ namespace org.javarosa.form.api
 				}
 			}
 			
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			if (children == null)
 			{
 				return false;

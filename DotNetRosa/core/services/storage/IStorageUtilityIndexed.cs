@@ -6,11 +6,11 @@ namespace org.javarosa.core.services.storage
 	
 	/* TEMPORARY / EXPERIMENTAL */
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	interface IStorageUtilityIndexed < E extends Externalizable > extends IStorageUtility < E >
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	{
 	
 	/// <summary> Retrieves a Vector of IDs of Externalizable objects in storage for which the field
@@ -28,7 +28,7 @@ namespace org.javarosa.core.services.storage
 	/// <throws>  RuntimeException (Fix this exception type) if the field is unrecognized by the </throws>
 	/// <summary> meta data
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	Vector getIDsForValue(String fieldName, Object value);
 	/// <summary> 
 	/// Retrieves a Externalizable object from the storage which is reference by the unique index fieldName.
@@ -47,7 +47,7 @@ namespace org.javarosa.core.services.storage
 	/// <throws>  InvalidIndexException If the field used is an invalid index, because more than one field in the Storage </throws>
 	/// <summary> contains the value of the index requested.
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	E getRecordForValue(String fieldName, Object value) throws NoSuchElementException, InvalidIndexException;
 	
 	/// <summary> Optional. Register a new index for this storage which may optionally be able for indexed operations
@@ -56,9 +56,9 @@ namespace org.javarosa.core.services.storage
 	/// </summary>
 	/// <param name="filterIndex">
 	/// </param>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void registerIndex(String filterIndex);
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	}
 }

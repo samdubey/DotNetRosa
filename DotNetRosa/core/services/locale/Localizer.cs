@@ -35,7 +35,7 @@ namespace org.javarosa.core.services.locale
 	{
 		private void  InitBlock()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String key: source.keySet())
 			{
 				destination.put(key, stringTree.addString(source.get_Renamed(key)));
@@ -50,31 +50,31 @@ namespace org.javarosa.core.services.locale
 			//for any possible language. As such, we'll keep around a table with only the default locale keys to
 			//ensure that there are no localizations which are only present in another locale, which causes ugly
 			//and difficult to trace errors.
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			OrderedMap < String, Boolean > defaultLocaleKeys = new OrderedMap < String, Boolean >();
 			
 			//This table will be loaded with the default values first (when applicable), and then with any
 			//language specific translations overwriting the existing values.
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			OrderedMap < String, PrefixTreeNode > data = new OrderedMap < String, PrefixTreeNode >();
 			
 			// If there's a default locale, we load all of its elements into memory first, then allow
 			// the current locale to overwrite any differences between the two.
 			if (fallbackDefaultLocale && defaultLocale != null)
 			{
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				for (int i = 0; i < defaultResources.size(); ++i)
 				{
 					loadTable(data, ((LocaleDataSource) defaultResources.elementAt(i)).getLocalizedText());
 				}
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(String key: data.keySet())
 				{
 					defaultLocaleKeys.put(key, true);
 				}
 			}
 			
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			for (int i = 0; i < resources.size(); ++i)
 			{
 				loadTable(data, ((LocaleDataSource) resources.elementAt(i)).getLocalizedText());
@@ -90,7 +90,7 @@ namespace org.javarosa.core.services.locale
 			{
 				System.String missingKeys = "";
 				int keysmissing = 0;
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(String key: data.keySet())
 				{
 					if (!defaultLocaleKeys.containsKey(key))
@@ -107,7 +107,7 @@ namespace org.javarosa.core.services.locale
 			}
 			
 			return data;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			OrderedMap < String, PrefixTreeNode > mapping = getLocaleData(locale);
 			if (mapping == null)
 				throw new UnregisteredLocaleException("Attempted to access an undefined locale.");
@@ -238,11 +238,11 @@ namespace org.javarosa.core.services.locale
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < String > locales; /* Vector<String> */
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private OrderedMap < String, Vector < LocaleDataSource >> localeResources; /* String -> Vector<LocaleDataSource> */
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
+		private List< String > locales; /* Vector<String> */
+		
+		private OrderedMap < String, List< LocaleDataSource >> localeResources; /* String -> Vector<LocaleDataSource> */
+		
 		private OrderedMap < String, PrefixTreeNode > currentLocaleData;
 		/* HashMap{ String -> String } */
 		private PrefixTree stringTree;
@@ -270,12 +270,12 @@ namespace org.javarosa.core.services.locale
 		{
 			InitBlock();
 			stringTree = new PrefixTree(10);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			localeResources = new OrderedMap < String, Vector < LocaleDataSource >>();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
+			localeResources = new OrderedMap < String, List< LocaleDataSource >>();
+			
 			currentLocaleData = new OrderedMap < String, PrefixTreeNode >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			locales = new Vector < String >();
+			
+			locales = new List< String >();
 			defaultLocale = null;
 			currentLocale = null;
 			observers = System.Collections.ArrayList.Synchronized(new System.Collections.ArrayList(10));
@@ -321,8 +321,8 @@ namespace org.javarosa.core.services.locale
 			else
 			{
 				locales.addElement(locale);
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				localeResources.put(locale, new Vector < LocaleDataSource >());
+				
+				localeResources.put(locale, new List< LocaleDataSource >());
 				return true;
 			}
 		}
@@ -378,9 +378,9 @@ namespace org.javarosa.core.services.locale
 		/// <param name="source">A dictionary of key/value locale pairs that will be copied into
 		/// destination
 		/// </param>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void loadTable(OrderedMap < String, PrefixTreeNode > destination, OrderedMap < String, String > source)
 		
 		/* === MANAGING LOCALE DATA (TEXT MAPPINGS) === */
@@ -404,8 +404,8 @@ namespace org.javarosa.core.services.locale
 			{
 				throw new System.NullReferenceException("Attempt to register a null data source in the localizer");
 			}
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < LocaleDataSource > resources = new Vector < LocaleDataSource >();
+			
+			List< LocaleDataSource > resources = new List< LocaleDataSource >();
 			if (localeResources.containsKey(locale))
 			{
 				resources = localeResources.get_Renamed(locale);
@@ -426,7 +426,7 @@ namespace org.javarosa.core.services.locale
 		/// </param>
 		/// <returns>s HashMap representing text mappings for this locale. Returns null if locale not defined or null.
 		/// </returns>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public OrderedMap < String, PrefixTreeNode > getLocaleData(String locale)
 		
 		/// <summary> Get the mappings for a locale, but throw an exception if locale is not defined.
@@ -437,7 +437,7 @@ namespace org.javarosa.core.services.locale
 		/// <returns> Text mappings for locale.
 		/// </returns>
 		/// <throws>  UnregisteredLocaleException If locale is not defined or null. </throws>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public OrderedMap < String, PrefixTreeNode > getLocaleMap(String locale)
 		
 		/// <summary> Determine whether a locale has a mapping for a given text handle. Only tests the specified locale and form; does
@@ -847,23 +847,23 @@ namespace org.javarosa.core.services.locale
 		{
 			fallbackDefaultLocale = ExtUtil.readBool(dis);
 			fallbackDefaultForm = ExtUtil.readBool(dis);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			localeResources =(OrderedMap < String, Vector < LocaleDataSource >>) ExtUtil.read(dis, new ExtWrapMap(String.
+			
+			localeResources =(OrderedMap < String, List< LocaleDataSource >>) ExtUtil.read(dis, new ExtWrapMap(String.
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		class, new ExtWrapListPoly(), ExtWrapMap.TYPE_ORDERED), pf);
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		locales =(Vector) ExtUtil.read(dis, new ExtWrapList(String.
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		class));
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		setDefaultLocale((String) ExtUtil.read(dis, new ExtWrapNullable(String.
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		class), pf));
 		//UPGRADE_NOTE: The initialization of  'currentLocale' was moved to method 'InitBlock'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		internal System.String currentLocale;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		if(currentLocale != null)
 		//UPGRADE_NOTE: The following method implementation was automatically added to preserve functionality. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1306'"
 		public override int GetHashCode()
@@ -873,25 +873,25 @@ namespace org.javarosa.core.services.locale
 	}
 	
 	/// <summary> Write the object to stream.</summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void writeExternal(DataOutputStream dos) throws IOException
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	{ 
 		ExtUtil.writeBool(dos, fallbackDefaultLocale);
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	ExtUtil.writeBool(dos, fallbackDefaultForm);
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	ExtUtil.write(dos, new ExtWrapMap(localeResources, new ExtWrapListPoly()));
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	ExtUtil.write(dos, new ExtWrapList(locales));
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	ExtUtil.write(dos, new ExtWrapNullable(defaultLocale));
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	ExtUtil.write(dos, new ExtWrapNullable(currentLocale));
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	}
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	}
 }

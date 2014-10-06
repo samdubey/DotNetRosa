@@ -205,7 +205,7 @@ namespace org.javarosa.core.util
 			int[] words = new int[]{a, b, c, d, e};
 			StringBuilder sb = new StringBuilder();
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(int word: words)
 			{
 				System.String hexWord = Integer.toHexString(word);

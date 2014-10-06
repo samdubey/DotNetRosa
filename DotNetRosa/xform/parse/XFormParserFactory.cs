@@ -22,7 +22,7 @@ namespace org.javarosa.xform.parse
 		{
 			this.stringCache = stringCache;
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		CacheTable < String > stringCache;
 		
 		public XFormParserFactory()
@@ -30,7 +30,7 @@ namespace org.javarosa.xform.parse
 			InitBlock();
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public XFormParserFactory(CacheTable < String > stringCache)
 		
 		//UPGRADE_ISSUE: Class hierarchy differences between 'java.io.Reader' and 'System.IO.StreamReader' may cause compilation errors. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1186'"

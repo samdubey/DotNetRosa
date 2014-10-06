@@ -30,8 +30,8 @@ namespace org.javarosa.core.model.utils
 	{
 		private void  InitBlock()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > pieces = new Vector < String >();
+			
+			List< String > pieces = new List< String >();
 			
 			int index = str.indexOf(delimiter);
 			while (index >= 0)
@@ -543,7 +543,7 @@ namespace org.javarosa.core.model.utils
 			{
 				timeOffset = new DateFields();
 				
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				
 				//We're going to add the Offset straight up to get UTC
 				//so we need to invert the sign on the offset string
@@ -565,7 +565,7 @@ namespace org.javarosa.core.model.utils
 				System.String hours = offset;
 				if (offset.IndexOf(":") != - 1)
 				{
-					//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+					
 					hours = tzPieces.elementAt(0);
 					int mins = Integer.parseInt(tzPieces.elementAt(1));
 					timeOffset.minute = mins * offsetSign;
@@ -1034,8 +1034,8 @@ namespace org.javarosa.core.model.utils
 		/// <returns> An array of strings contained in original which were
 		/// seperated by the delimeter
 		/// </returns>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public static Vector < String > split(String str, String delimiter, boolean combineMultipleDelimiters)
+		
+		public static List< String > split(String str, String delimiter, boolean combineMultipleDelimiters)
 		
 		/// <summary> Converts an integer to a string, ensuring that the string
 		/// contains a certain number of digits

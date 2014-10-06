@@ -29,7 +29,7 @@ namespace org.javarosa.core.util
 		}
 		private void  InitBlock()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(E e: a)
 			{
 				if (b.indexOf(e) != - 1)
@@ -42,24 +42,24 @@ namespace org.javarosa.core.util
 			{
 				return null;
 			}
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < E > b = new Vector < E >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
+			List< E > b = new List< E >();
+			
 			for(E e: a)
 			{
 				b.addElement(e);
 			}
 			return b;
 			int i = 0;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(E e: v)
 			{
 				a[i++] = e;
 			}
 			return a;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < E > v = new Vector < E >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
+			List< E > v = new List< E >();
+			
 			for(E e: a)
 			{
 				v.addElement(e);
@@ -130,16 +130,16 @@ namespace org.javarosa.core.util
 		/// </param>
 		/// <returns>
 		/// </returns>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public static < E > E intersectSingle(Vector < E > a, Vector < E > b)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public static < E > Vector < E > vectorCopy(Vector < E > a)
+		public static < E > E intersectSingle(List< E > a, List< E > b)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public static < E > E [] copyIntoArray(Vector < E > v, E [] a)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public static < E > Vector < E > toVector(E [] a)
+		public static < E > List< E > vectorCopy(List< E > a)
+		
+		
+		public static < E > E [] copyIntoArray(List< E > v, E [] a)
+		
+		
+		public static < E > List< E > toVector(E [] a)
 	}
 }

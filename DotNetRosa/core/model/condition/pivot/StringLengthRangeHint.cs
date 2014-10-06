@@ -9,7 +9,7 @@ namespace org.javarosa.core.model.condition.pivot
 	/// </author>
 	public class StringLengthRangeHint:RangeHint
 	{
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< StringData >
 		
 		protected internal override StringData castToValue(double value_Renamed)

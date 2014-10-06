@@ -14,6 +14,7 @@
 * the License.
 */
 using System;
+using System.Collections.Generic;
 namespace org.javarosa.core.util
 {
 	
@@ -49,8 +50,8 @@ namespace org.javarosa.core.util
 		}
 		private char[] prefix;
 		private bool terminal;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < PrefixTreeNode > children;
+		
+		private List< PrefixTreeNode > children;
 		private PrefixTreeNode parent;
 		
 		public PrefixTreeNode(char[] prefix)
@@ -60,13 +61,11 @@ namespace org.javarosa.core.util
 			this.terminal = false;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void decompose(Vector < String > v, String s)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < PrefixTreeNode > getChildren()
+		public	void decompose(List< String > v, String s);
+
+
+        public List<PrefixTreeNode> getChildren();
 		
 		public  override bool Equals(System.Object o)
 		{
@@ -128,8 +127,8 @@ namespace org.javarosa.core.util
 		{
 			if (children == null)
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				children = new Vector < PrefixTreeNode >();
+				
+				children = new List< PrefixTreeNode >();
 			}
 			children.addElement(node);
 			node.parent = this;

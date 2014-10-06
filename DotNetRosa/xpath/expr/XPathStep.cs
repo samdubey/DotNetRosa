@@ -52,12 +52,12 @@ namespace org.javarosa.xpath.expr
 		public const int TEST_TYPE_COMMENT = 5;
 		public const int TEST_TYPE_PROCESSING_INSTRUCTION = 6;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static CacheTable < XPathStep > refs;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void attachCacheTable(CacheTable < XPathStep > refs)
 		
 		public static XPathStep ABBR_SELF()
@@ -298,7 +298,7 @@ namespace org.javarosa.xpath.expr
 		public override int GetHashCode()
 		{
 			int code = this.axis ^ this.test ^ (this.name == null?0:this.name.GetHashCode()) ^ (this.literal == null?0:this.literal.GetHashCode()) ^ (this.namespace_Renamed == null?0:this.namespace_Renamed.GetHashCode());
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(XPathExpression xpe: predicates)
 			{
 				code ^= xpe.hashCode();

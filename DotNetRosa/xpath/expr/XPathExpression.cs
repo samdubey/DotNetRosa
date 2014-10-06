@@ -32,8 +32,8 @@ namespace org.javarosa.xpath.expr
 		{
 			try
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				Vector < Object > pivots = new Vector < Object >();
+				
+				List< Object > pivots = new List< Object >();
 				this.pivot(model, evalContext, pivots, evalContext.getContextRef());
 				return pivots;
 			}
@@ -60,8 +60,8 @@ namespace org.javarosa.xpath.expr
 		
 		public abstract System.Object eval(FormInstance model, EvaluationContext evalContext);
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public final Vector < Object > pivot(FormInstance model, EvaluationContext evalContext) throws UnpivotableExpressionException
+		
+		public final List< Object > pivot(FormInstance model, EvaluationContext evalContext) throws UnpivotableExpressionException
 		
 		/// <summary> Pivot this expression, returning values if appropriate, and adding any pivots to the list.
 		/// 
@@ -81,8 +81,8 @@ namespace org.javarosa.xpath.expr
 		/// </returns>
 		/// <throws>  UnpivotableExpressionException If the expression is too complex to pivot </throws>
 		public System.Object pivot;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		(FormInstance model, EvaluationContext evalContext, Vector < Object > pivots, Object sentinal) throws UnpivotableExpressionException
+		
+		(FormInstance model, EvaluationContext evalContext, List< Object > pivots, Object sentinal) throws UnpivotableExpressionException
 		
 		/*======= DEBUGGING ========*/
 		// should not compile onto phone

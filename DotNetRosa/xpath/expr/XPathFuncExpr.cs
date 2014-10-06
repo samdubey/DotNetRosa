@@ -60,7 +60,7 @@ namespace org.javarosa.xpath.expr
 			//Identify whether this function is an identity: IE: can reflect back the pivot sentinal with no modification
 			System.String[] identities = new System.String[]{"string-length"};
 			bool id = false;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String identity: identities)
 			{
 				if (identity.equals(name))
@@ -1662,8 +1662,8 @@ namespace org.javarosa.xpath.expr
 		
 		/// <summary> </summary>
 		new public System.Object pivot;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		(FormInstance model, EvaluationContext evalContext, Vector < Object > pivots, Object sentinal) throws UnpivotableExpressionException
+		
+		(FormInstance model, EvaluationContext evalContext, List< Object > pivots, Object sentinal) throws UnpivotableExpressionException
 		//UPGRADE_NOTE: The following method implementation was automatically added to preserve functionality. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1306'"
 		public override int GetHashCode()
 		{

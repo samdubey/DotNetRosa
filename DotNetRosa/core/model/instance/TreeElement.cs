@@ -65,7 +65,7 @@ namespace org.javarosa.core.model.instance
 		private void  InitBlock()
 		{
 			dataType = Constants.DATATYPE_NULL;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(TreeElement attribute: attributes)
 			{
 				if (attribute.Name.equals(name) && (namespace_Renamed == null || namespace_Renamed.Equals(attribute.namespace_Renamed)))
@@ -99,8 +99,8 @@ namespace org.javarosa.core.model.instance
 			
 			attrs.addElement(attr);
 			return getChildrenWithName(name, false);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < TreeElement > v = new Vector < TreeElement >();
+			
+			List< TreeElement > v = new List< TreeElement >();
 			if (children == null)
 			{
 				return v;
@@ -115,7 +115,7 @@ namespace org.javarosa.core.model.instance
 			
 			return v;
 			// create new tree elements for all the bind definitions...
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(TreeElement ref: bindAttributes)
 			{
 				setBindAttribute(ref_Renamed.Namespace, ref_Renamed.Name, ref_Renamed.getAttributeValue());
@@ -127,14 +127,14 @@ namespace org.javarosa.core.model.instance
 				return null;
 			}
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < Integer > toRemove = new Vector < Integer >();
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
+			List< Integer > toRemove = new List< Integer >();
+			
 			
 			//Lazy init these until we've determined that our predicate is hintable
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			HashMap < XPathPathExpr, String > indices = null;
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			
 			//UPGRADE_NOTE: Label 'predicate' was moved. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1014'"
 			for (int i = 0; i < predicates.size(); ++i)
@@ -156,7 +156,7 @@ namespace org.javarosa.core.model.instance
 						//don't want the overhead if our predicate is too complex anyway
 						if (indices == null)
 						{
-							//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+							
 							indices = new HashMap < XPathPathExpr, String >();
 							kids = this.getChildrenWithName(name);
 							
@@ -174,7 +174,7 @@ namespace org.javarosa.core.model.instance
 							}
 						}
 						
-						//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+						
 						for(XPathPathExpr expr: indices.keySet())
 						{
 							if (expr.equals(left))
@@ -187,8 +187,8 @@ namespace org.javarosa.core.model.instance
 									{
 										if (selectedChildren == null)
 										{
-											//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-											selectedChildren = new Vector < TreeReference >();
+											
+											selectedChildren = new List< TreeReference >();
 										}
 										selectedChildren.addElement(kids.elementAt(kidI).Ref);
 									}
@@ -206,7 +206,8 @@ namespace org.javarosa.core.model.instance
 				//There's only one case where we want to keep moving along, and we would have triggered it if it were going to happen,
 				//so otherwise, just get outta here.
 				break;
-				//UPGRADE_NOTE: Label 'predicate' was moved. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1014'"
+				//UPGRADE_NOTE: Label 'predicate' was moved. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1014'"
+
 predicate: ;
 			}
 			
@@ -585,7 +586,7 @@ predicate: ;
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< TreeElement >
 		private System.String name; // can be null only for hidden root node
 		protected internal int multiplicity = - 1; // see TreeReference for special values
@@ -594,8 +595,8 @@ predicate: ;
 		private IAnswerData value_Renamed;
 		
 		private System.Collections.ArrayList observers;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeElement > attributes;
+		
+		private List< TreeElement > attributes;
 		private System.Collections.ArrayList children = System.Collections.ArrayList.Synchronized(new System.Collections.ArrayList(10));
 		
 		/* model properties */
@@ -605,8 +606,8 @@ predicate: ;
 		private Constraint constraint = null;
 		private System.String preloadHandler = null;
 		private System.String preloadParams = null;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeElement > bindAttributes = new Vector < TreeElement >();
+		
+		private List< TreeElement > bindAttributes = new List< TreeElement >();
 		
 		//private boolean required = false;// TODO
 		//protected boolean repeatable;
@@ -646,8 +647,8 @@ predicate: ;
 			this.name = name;
 			this.multiplicity = multiplicity;
 			this.parent = null;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			attributes = new Vector < TreeElement >(0);
+			
+			attributes = new List< TreeElement >(0);
 		}
 		
 		/// <summary> Construct a TreeElement which represents an attribute with the provided
@@ -688,13 +689,13 @@ predicate: ;
 		/// <returns> TreeElement
 		/// </returns>
 		public static TreeElement getAttribute_Renamed_Field;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		(Vector < TreeElement > attributes, String namespace, String name)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		(List< TreeElement > attributes, String namespace, String name)
+		
+		
 		public static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void setAttribute(TreeElement parent, Vector < TreeElement > attrs, String namespace, String name, String value)
+		
+		void setAttribute(TreeElement parent, List< TreeElement > attrs, String namespace, String name, String value)
 		
 		/* (non-Javadoc)
 		* @see org.javarosa.core.model.instance.AbstractTreeElement#getChild(java.lang.String, int)
@@ -738,11 +739,11 @@ predicate: ;
 		*
 		* @see org.javarosa.core.model.instance.AbstractTreeElement#getChildrenWithName(java.lang.String)
 		*/
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeElement > getChildrenWithName(String name)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeElement > getChildrenWithName(String name, boolean includeTemplate)
+		public List< TreeElement > getChildrenWithName(String name)
+		
+		
+		private List< TreeElement > getChildrenWithName(String name, boolean includeTemplate)
 		
 		public virtual bool hasChildren()
 		{
@@ -909,8 +910,8 @@ predicate: ;
 			newNode.namespace_Renamed = namespace_Renamed;
 			newNode.bindAttributes = bindAttributes;
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			newNode.attributes = new Vector < TreeElement >();
+			
+			newNode.attributes = new List< TreeElement >();
 			for (int i = 0; i < attributes.size(); i++)
 			{
 				TreeElement attr = (TreeElement) attributes.elementAt(i);
@@ -1046,13 +1047,13 @@ predicate: ;
 			}
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void setBindAttributes(Vector < TreeElement > bindAttributes)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeElement > getBindAttributes()
+		public
+		
+		void setBindAttributes(List< TreeElement > bindAttributes)
+		
+		
+		public List< TreeElement > getBindAttributes()
 		
 		/// <summary> Retrieves the TreeElement representing an arbitrary bind attribute
 		/// for this element at the provided namespace and name, or null if none exists.
@@ -1767,7 +1768,7 @@ predicate: ;
 			expireReferenceCache();
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeReference > tryBatchChildFetch(String name, int mult, Vector < XPathExpression > predicates, EvaluationContext evalContext)
+		
+		public List< TreeReference > tryBatchChildFetch(String name, int mult, List< XPathExpression > predicates, EvaluationContext evalContext)
 	}
 }

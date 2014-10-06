@@ -19,7 +19,7 @@ namespace org.javarosa.xform.parse
 		public virtual SubmissionProfile parseSubmission(System.String method, System.String action, IDataReference ref_Renamed, Element element)
 		{
 			System.String mediatype = element.getAttributeValue(null, "mediatype");
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			HashMap < String, String > attributeMap = new HashMap < String, String >();
 			int nAttr = element.getAttributeCount();
 			for (int i = 0; i < nAttr; ++i)

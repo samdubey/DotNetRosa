@@ -34,9 +34,9 @@ namespace org.javarosa.core.model.instance
 	{
 		private void  InitBlock()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			HashMap < String, Object > data = new HashMap < String, Object >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String key: getMetaDataFields())
 			{
 				data.put(key, getMetaData(key));
@@ -74,7 +74,7 @@ namespace org.javarosa.core.model.instance
 			{
 				System.String[] prefixes = new System.String[namespaces.size()];
 				int i = 0;
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(String key: namespaces.keySet())
 				{
 					prefixes[i] = key;
@@ -92,7 +92,7 @@ namespace org.javarosa.core.model.instance
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< TreeElement > implements Persistable, IMetaData
 		
 		public const System.String STORAGE_KEY = "FORMDATA";
@@ -104,7 +104,7 @@ namespace org.javarosa.core.model.instance
 		public System.String formVersion;
 		public System.String uiVersion;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private HashMap < String, Object > namespaces = new HashMap < String, Object >();
 		
 		/// <summary>The root of this tree </summary>
@@ -384,9 +384,9 @@ namespace org.javarosa.core.model.instance
 			cloned.schema = this.schema;
 			cloned.formVersion = this.formVersion;
 			cloned.uiVersion = this.uiVersion;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			cloned.namespaces = new HashMap < String, Object >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String key: namespaces.keySet())
 			{
 				cloned.namespaces.put(key, this.namespaces.get_Renamed(key));
@@ -497,7 +497,7 @@ namespace org.javarosa.core.model.instance
 		public const System.String META_XMLNS = "XMLNS";
 		public const System.String META_ID = "instance_id";
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public HashMap < String, Object > getMetaData()
 		
 		public virtual System.Object getMetaData(System.String fieldName)

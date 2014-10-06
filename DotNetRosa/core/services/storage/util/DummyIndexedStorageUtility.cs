@@ -23,10 +23,10 @@ namespace org.javarosa.core.services.storage.util
 		{
 			//We should really find a way to invalidate old iterators first here
 			return ;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			new DummyStorageIterator < T >(data);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < Integer > removed = new Vector < Integer >();
+			
+			List< Integer > removed = new List< Integer >();
 			//UPGRADE_TODO: Method 'java.util.Enumeration.hasMoreElements' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilEnumerationhasMoreElements'"
 			for (System.Collections.IEnumerator en = data.keys(); en.MoveNext(); )
 			{
@@ -47,7 +47,7 @@ namespace org.javarosa.core.services.storage.util
 					removed.addElement(i);
 				}
 			}
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(Integer i: removed)
 			{
 				data.remove(i);
@@ -111,13 +111,13 @@ namespace org.javarosa.core.services.storage.util
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< T extends Persistable > implements IStorageUtilityIndexed < T >
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Hashtable < String, Hashtable < Object, Vector < Integer >>> meta;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		private Hashtable < String, Hashtable < Object, List< Integer >>> meta;
+		
+		
 		private Hashtable < Integer, T > data;
 		
 		internal int curCount;
@@ -125,9 +125,9 @@ namespace org.javarosa.core.services.storage.util
 		public DummyIndexedStorageUtility()
 		{
 			InitBlock();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			meta = new Hashtable < String, Hashtable < Object, Vector < Integer >>>();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
+			meta = new Hashtable < String, Hashtable < Object, List< Integer >>>();
+			
 			data = new Hashtable < Integer, T >();
 			curCount = 0;
 		}
@@ -140,9 +140,9 @@ namespace org.javarosa.core.services.storage.util
 		{
 			if (meta.get_Renamed(fieldName) == null || meta.get_Renamed(fieldName).get_Renamed(value_Renamed) == null)
 			{
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				new Vector < Integer >();
+				
+				
+				new List< Integer >();
 			}
 			return meta.get_Renamed(fieldName).get_Renamed(value_Renamed);
 		}
@@ -159,7 +159,7 @@ namespace org.javarosa.core.services.storage.util
 				throw new System.ArgumentOutOfRangeException("No record matching meta index " + fieldName + " with value " + value_Renamed);
 			}
 			
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			
 			if (matches == null || matches.size() == 0)
 			{
@@ -230,7 +230,7 @@ namespace org.javarosa.core.services.storage.util
 		/* (non-Javadoc)
 		* @see org.javarosa.core.services.storage.IStorageUtility#iterate()
 		*/
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public IStorageIterator < T > iterate()
 		
 		/* (non-Javadoc)
@@ -290,8 +290,8 @@ namespace org.javarosa.core.services.storage.util
 		/* (non-Javadoc)
 		* @see org.javarosa.core.services.storage.IStorageUtility#removeAll(org.javarosa.core.services.storage.EntityFilter)
 		*/
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < Integer > removeAll(EntityFilter ef)
+		
+		public List< Integer > removeAll(EntityFilter ef)
 		
 		/* (non-Javadoc)
 		* @see org.javarosa.core.services.storage.IStorageUtility#repack()
@@ -349,22 +349,22 @@ namespace org.javarosa.core.services.storage.util
 				{
 					
 					IMetaData m = (IMetaData) e;
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+					
 					for(String key: m.getMetaDataFields())
 					{
 						if (!meta.containsKey(key))
 						{
-							//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-							meta.put(key, new Hashtable < Object, Vector < Integer >>());
+							
+							meta.put(key, new Hashtable < Object, List< Integer >>());
 						}
 					}
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+					
 					for(String key: dynamicIndices)
 					{
 						if (!meta.containsKey(key))
 						{
-							//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-							meta.put(key, new Hashtable < Object, Vector < Integer >>());
+							
+							meta.put(key, new Hashtable < Object, List< Integer >>());
 						}
 					}
 					//UPGRADE_TODO: Method 'java.util.Enumeration.hasMoreElements' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilEnumerationhasMoreElements'"
@@ -375,15 +375,15 @@ namespace org.javarosa.core.services.storage.util
 						
 						System.Object value_Renamed = m.getMetaData(key);
 						
-						//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-						Hashtable < Object, Vector < Integer >> records = meta.get(key);
+						
+						Hashtable < Object, List< Integer >> records = meta.get(key);
 						
 						if (!records.containsKey(value_Renamed))
 						{
-							//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-							records.put(value, new Vector < Integer >());
+							
+							records.put(value, new List< Integer >());
 						}
-						//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+						
 						if (!indices.contains(i))
 						{
 							records.get_Renamed(value_Renamed).addElement(i);
@@ -400,8 +400,8 @@ namespace org.javarosa.core.services.storage.util
 		}
 		
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		Vector < String > dynamicIndices = new Vector < String >();
+		
+		List< String > dynamicIndices = new List< String >();
 		public virtual void  registerIndex(System.String filterIndex)
 		{
 			dynamicIndices.addElement(filterIndex);

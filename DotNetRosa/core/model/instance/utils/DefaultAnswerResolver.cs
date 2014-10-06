@@ -31,7 +31,7 @@ namespace org.javarosa.core.model.instance.utils
 	/// </summary>
 	public class DefaultAnswerResolver : IAnswerResolver
 	{
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		Override
 		public virtual IAnswerData resolveAnswer(System.String textVal, TreeElement treeElement, FormDef formDef)
 		{

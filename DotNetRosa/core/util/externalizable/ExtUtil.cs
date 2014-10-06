@@ -30,7 +30,7 @@ namespace org.javarosa.core.util.externalizable
 		private void  InitBlock()
 		{
 			ExtUtil.writeNumeric(out_Renamed, attributes.size());
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(TreeElement e: attributes)
 			{
 				ExtUtil.write(out_Renamed, e.getNamespace());
@@ -38,8 +38,8 @@ namespace org.javarosa.core.util.externalizable
 				ExtUtil.write(out_Renamed, e.getAttributeValue());
 			}
 			int size = (int) ExtUtil.readNumeric(in_Renamed);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < TreeElement > attributes = new Vector < TreeElement >();
+			
+			List< TreeElement > attributes = new List< TreeElement >();
 			for (int i = 0; i < size; ++i)
 			{
 				System.String namespace_Renamed = ExtUtil.readString(in_Renamed);
@@ -54,7 +54,7 @@ namespace org.javarosa.core.util.externalizable
 			ExtUtil.stringCache = stringCache;
 		}
 		public static bool interning = true;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public static CacheTable < String > stringCache;
 		public static sbyte[] serialize(System.Object o)
 		{
@@ -266,17 +266,17 @@ namespace org.javarosa.core.util.externalizable
 		public static void  writeInts(System.IO.BinaryWriter out_Renamed, int[] ints)
 		{
 			ExtUtil.writeNumeric(out_Renamed, ints.Length);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(int i: ints)
 			{
 				ExtUtil.writeNumeric(out_Renamed, i);
 			}
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void writeAttributes(DataOutputStream out, Vector < TreeElement > attributes) throws IOException
+		
+		void writeAttributes(DataOutputStream out, List< TreeElement > attributes) throws IOException
 		
 		//UPGRADE_TODO: Class 'java.io.DataInputStream' was converted to 'System.IO.BinaryReader' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javaioDataInputStream'"
 		public static System.Object read(System.IO.BinaryReader in_Renamed, System.Type type)
@@ -457,8 +457,8 @@ namespace org.javarosa.core.util.externalizable
 			return ints;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public static Vector < TreeElement > readAttributes(DataInputStream in, TreeElement parent) throws IOException
+		
+		public static List< TreeElement > readAttributes(DataInputStream in, TreeElement parent) throws IOException
 		
 		public static int toInt(long l)
 		{
@@ -638,7 +638,7 @@ namespace org.javarosa.core.util.externalizable
 			}
 			else
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(Object keyA: a.keySet())
 				{
 					
@@ -718,9 +718,9 @@ namespace org.javarosa.core.util.externalizable
 		}
 		////
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void attachCacheTable(CacheTable < String > stringCache)
 	}
 }

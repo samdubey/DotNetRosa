@@ -46,21 +46,21 @@ namespace org.javarosa.core.reference
 		
 		private static ReferenceManager instance;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < RootTranslator > translators;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < ReferenceFactory > factories;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < RootTranslator > sessionTranslators;
+		
+		private List< RootTranslator > translators;
+		
+		private List< ReferenceFactory > factories;
+		
+		private List< RootTranslator > sessionTranslators;
 		
 		private ReferenceManager()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			translators = new Vector < RootTranslator >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			factories = new Vector < ReferenceFactory >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			sessionTranslators = new Vector < RootTranslator >();
+			
+			translators = new List< RootTranslator >();
+			
+			factories = new List< ReferenceFactory >();
+			
+			sessionTranslators = new List< RootTranslator >();
 		}
 		
 		/// <returns> Singleton accessor to the global
@@ -205,7 +205,7 @@ namespace org.javarosa.core.reference
 		{
 			
 			//First, try any/all roots which are put in the temporary session stack
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(RootTranslator root: sessionTranslators)
 			{
 				if (root.derives(uri))
@@ -215,7 +215,7 @@ namespace org.javarosa.core.reference
 			}
 			
 			//Now, try any/all roots referenced at runtime.
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(RootTranslator root: translators)
 			{
 				if (root.derives(uri))
@@ -225,7 +225,7 @@ namespace org.javarosa.core.reference
 			}
 			
 			//Now try all of the raw connectors available
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(ReferenceFactory root: factories)
 			{
 				if (root.derives(uri))
@@ -263,21 +263,21 @@ namespace org.javarosa.core.reference
 					uriRoot = uriRoot.Substring(0, (endOfRoot) - (0));
 				}
 				System.String message = "The reference \"" + uri + "\" was invalid and couldn't be understood. The " + jrRefMessagePortion + " \"" + uriRoot + "\" is not available on this system and may have been mis-typed. Some available roots: ";
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(RootTranslator root: sessionTranslators)
 				{
 					message += ("\n" + root.prefix);
 				}
 				
 				//Now, try any/all roots referenced at runtime.
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(RootTranslator root: translators)
 				{
 					message += ("\n" + root.prefix);
 				}
 				
 				//Now try all of the raw connectors available
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(ReferenceFactory root: factories)
 				{
 					
@@ -287,7 +287,7 @@ namespace org.javarosa.core.reference
 						
 						if (root is PrefixedRootFactory)
 						{
-							//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+							
 							for(String rootName:((PrefixedRootFactory) root).roots)
 							{
 								message += ("\n" + rootName);

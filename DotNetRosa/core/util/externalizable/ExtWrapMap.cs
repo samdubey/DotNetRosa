@@ -173,7 +173,7 @@ namespace org.javarosa.core.util.externalizable
 			System.Collections.Hashtable h = (System.Collections.Hashtable) val;
 			
 			ExtUtil.writeNumeric(out_Renamed, h.Count);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(Object key: h.keySet())
 			{
 				//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"

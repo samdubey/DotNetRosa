@@ -20,11 +20,11 @@ namespace org.javarosa.core.services.storage
 	/// These two schemes should not be mixed within the same StorageUtility.
 	/// 
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	interface IStorageUtility < E extends Externalizable >
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	{
 	
 	/// <summary> Read and return the record corresponding to 'id'.
@@ -34,7 +34,7 @@ namespace org.javarosa.core.services.storage
 	/// </param>
 	/// <returns> object for 'id'. null if no object is stored under that ID
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	E read(int id);
 	
 	/// <summary> Read and return the raw bytes for the record corresponding to 'id'.
@@ -44,7 +44,7 @@ namespace org.javarosa.core.services.storage
 	/// </param>
 	/// <returns> raw bytes for the record. null if no record is stored under that ID
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	byte [] readBytes(int id);
 	
 	/// <summary> Write an object to the store. Will either add a new record, or update the existing record (if one exists) for the
@@ -54,7 +54,7 @@ namespace org.javarosa.core.services.storage
 	/// <param name="p">object to store
 	/// </param>
 	/// <throws>  StorageFullException if there is not enough room to store the object </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void write(Persistable p) throws StorageFullException;
 	
 	/// <summary> Add a new record to the store. This function always adds a new record; it never updates an existing record. The
@@ -67,7 +67,7 @@ namespace org.javarosa.core.services.storage
 	/// <returns> record ID for newly added object
 	/// </returns>
 	/// <throws>  StorageFullException if not enough space available </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int add(E e) throws StorageFullException;
 	
 	/// <summary> Update a record in the store. The record must have previously been added to the store using add(). If this
@@ -80,7 +80,7 @@ namespace org.javarosa.core.services.storage
 	/// </param>
 	/// <throws>  StorageFullException if not enough space available to update </throws>
 	/// <throws>  IllegalArgumentException if no record exists for ID </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void update(int id, E e) throws StorageFullException;
 	
 	/// <summary> Remove record with the given ID from the store.
@@ -89,7 +89,7 @@ namespace org.javarosa.core.services.storage
 	/// <param name="id">ID of record to remove
 	/// </param>
 	/// <throws>  IllegalArgumentException if no record with that ID exists </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void remove(int id);
 	
 	/// <summary> Remove object from the store
@@ -98,21 +98,21 @@ namespace org.javarosa.core.services.storage
 	/// <param name="p">object to remove
 	/// </param>
 	/// <throws>  IllegalArgumentException if object is not in the store </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void remove(Persistable p);
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void removeAll();
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-	Vector < Integer > removeAll(EntityFilter ef);
+	
+	List< Integer > removeAll(EntityFilter ef);
 	
 	/// <summary> Return the number of records in the store
 	/// 
 	/// </summary>
 	/// <returns> number of records
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int getNumRecords();
 	
 	/// <summary> Return whether the store is empty
@@ -120,7 +120,7 @@ namespace org.javarosa.core.services.storage
 	/// </summary>
 	/// <returns> true if there are no records in the store
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	boolean isEmpty();
 	
 	/// <summary> Return whether a record exists in the store
@@ -130,7 +130,7 @@ namespace org.javarosa.core.services.storage
 	/// </param>
 	/// <returns> true if a record exists for that ID in the store
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	boolean exists(int id);
 	
 	/// <summary> Return total size of device storage consumed by this StorageUtility
@@ -138,7 +138,7 @@ namespace org.javarosa.core.services.storage
 	/// </summary>
 	/// <returns> total size (bytes)
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int getTotalSize();
 	
 	/// <summary> Get the size of a record
@@ -149,7 +149,7 @@ namespace org.javarosa.core.services.storage
 	/// <returns> size of that record, in bytes
 	/// </returns>
 	/// <throws>  IllegalArgumentException if no record exists for that ID </throws>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int getRecordSize(int id);
 	
 	/// <summary> Return an iterator to iterate through all records in this store
@@ -157,30 +157,30 @@ namespace org.javarosa.core.services.storage
 	/// </summary>
 	/// <returns> record iterator
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	IStorageIterator < E > iterate();
 	
 	/// <summary> Close all resources associated with this StorageUtility. Any attempt to use this StorageUtility after this call will result
 	/// in error. Though not strictly necessary, it is a good idea to call this when you are done with the StorageUtility, as closing
 	/// may trigger clean-up in the underlying device storage (reclaiming unused space, etc.).
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void close();
 	
 	/// <summary> Delete the storage utility itself, along with all stored records and meta-data</summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void destroy();
 	
 	/// <summary> Perform any clean-up/consolidation of the StorageUtility's underlying datastructures that is too expensive to do during
 	/// normal usage (e.g., if all the records are scattered among 10 half-empty RMSes, repack them into 5 full RMSes)
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void repack();
 	
 	/// <summary> If the StorageUtility has been left in a corrupt/inconsistent state, restore it to a non-corrupt state, even if it results
 	/// in data loss. If the integrity is intact, do nothing
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void repair();
 	
 	/// <summary> Fetch the object that acts as the synchronization lock for this StorageUtility
@@ -188,11 +188,11 @@ namespace org.javarosa.core.services.storage
 	/// </summary>
 	/// <returns> lock object
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	Object getAccessLock();
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void setReadOnly();
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	}
 }

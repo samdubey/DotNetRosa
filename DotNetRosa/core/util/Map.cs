@@ -180,25 +180,25 @@ namespace org.javarosa.core.util
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< K, V > extends OrderedMap < K, V >
 		
 		public Map()
 		{
 			InitBlock();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			keys = new Vector < K >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			elements = new Vector < V >();
+			
+			keys = new List< K >();
+			
+			elements = new List< V >();
 		}
 		
 		public Map(int sizeHint)
 		{
 			InitBlock();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			keys = new Vector < K >(sizeHint);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			elements = new Vector < V >(sizeHint);
+			
+			keys = new List< K >(sizeHint);
+			
+			elements = new List< V >(sizeHint);
 		}
 		
 		public Map(K[] keysSealed, V[] elementsSealed)
@@ -306,10 +306,10 @@ namespace org.javarosa.core.util
 			{
 				keysSealed = null;
 				elementsSealed = null;
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				keys = new Vector < K >();
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				elements = new Vector < V >();
+				
+				keys = new List< K >();
+				
+				elements = new List< V >();
 			}
 		}
 		

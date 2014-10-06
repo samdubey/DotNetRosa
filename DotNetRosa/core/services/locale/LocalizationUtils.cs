@@ -16,7 +16,7 @@ namespace org.javarosa.core.services.locale
 		private void  InitBlock()
 		{
 			// TODO: This might very well fail. Best way to handle?
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			OrderedMap < String, String > locale = new OrderedMap < String, String >();
 			int chunk = 100;
 			System.IO.StreamReader isr;
@@ -116,12 +116,12 @@ namespace org.javarosa.core.services.locale
 		/// <returns> a dictionary of key/value locale pairs from a file in the resource directory 
 		/// </returns>
 		/// <throws>  IOException  </throws>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public static OrderedMap < String, String > parseLocaleInput(InputStream is) throws IOException
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void parseAndAdd(OrderedMap < String, String > locale, String line, int curline)
 	}
 }

@@ -30,7 +30,7 @@ namespace org.javarosa.core.services.storage
 			{
 				System.String[] fields = new System.String[data.size()];
 				int count = 0;
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(String field: data.keySet())
 				{
 					fields[count] = field;
@@ -39,10 +39,10 @@ namespace org.javarosa.core.services.storage
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private HashMap < String, Object > data;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public MetaDataWrapper(HashMap < String, Object > data)
 		
 		/* (non-Javadoc)

@@ -18,7 +18,7 @@ namespace org.javarosa.core.services.storage.util
 		}
 		private void  InitBlock()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			Hashtable < Integer, T > data;
 			int count;
 			System.Int32[] keys;
@@ -34,11 +34,11 @@ namespace org.javarosa.core.services.storage.util
 			}
 			count = 0;
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< T extends Persistable > implements IStorageIterator < T >
 		
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public DummyStorageIterator(Hashtable < Integer, T > data)
 		
 		/* (non-Javadoc)

@@ -555,18 +555,18 @@ namespace org.javarosa.core.model
 		{
 			FormIndex cur = this;
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < Integer > indexes = new Vector < Integer >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < Integer > multiplicities = new Vector < Integer >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < IFormElement > elements = new Vector < IFormElement >();
+			
+			List< Integer > indexes = new List< Integer >();
+			
+			List< Integer > multiplicities = new List< Integer >();
+			
+			List< IFormElement > elements = new List< IFormElement >();
 			f.collapseIndex(this, indexes, multiplicities, elements);
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < Integer > curMults = new Vector < Integer >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < IFormElement > curElems = new Vector < IFormElement >();
+			
+			List< Integer > curMults = new List< Integer >();
+			
+			List< IFormElement > curElems = new List< IFormElement >();
 			
 			int i = 0;
 			while (cur != null)

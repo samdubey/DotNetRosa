@@ -21,7 +21,7 @@ namespace org.javarosa.core.util
 	
 	public class OrderedMap
 	{
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< K, V > extends LinkedHashMap < K, V >
 		
 		public override System.String ToString()

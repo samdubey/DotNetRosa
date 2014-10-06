@@ -30,8 +30,8 @@ namespace org.javarosa.core.util
 			}
 			public virtual void  Run()
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				Vector < Integer > toRemove = new Vector < Integer >();
+				
+				List< Integer > toRemove = new List< Integer >();
 				while (true)
 				{
 					try
@@ -46,7 +46,7 @@ namespace org.javarosa.core.util
 							}
 							else
 							{
-								//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+								
 								Hashtable < Integer, WeakReference > table = cache.currentTable;
 								//UPGRADE_TODO: Method 'java.util.Enumeration.hasMoreElements' was converted to 'System.Collections.IEnumerator.MoveNext' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilEnumerationhasMoreElements'"
 								for (System.Collections.IEnumerator en = table.keys(); en.MoveNext(); )
@@ -118,14 +118,14 @@ namespace org.javarosa.core.util
 		{
 			int totalAdditions = 0;
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< K >
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private Hashtable < Integer, WeakReference > currentTable;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private static Vector < WeakReference > caches = new Vector < WeakReference >();
+		
+		private static List< WeakReference > caches = new List< WeakReference >();
 		
 		//UPGRADE_NOTE: The initialization of  'cleaner' was moved to static method 'org.javarosa.core.util.CacheTable'. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1005'"
 		private static SupportClass.ThreadClass cleaner;
@@ -145,7 +145,7 @@ namespace org.javarosa.core.util
 		public CacheTable():base()
 		{
 			InitBlock();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			currentTable = new Hashtable < Integer, WeakReference >();
 			registerCache(this);
 		}

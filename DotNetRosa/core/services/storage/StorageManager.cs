@@ -31,7 +31,7 @@ namespace org.javarosa.core.services.storage
 	public class StorageManager
 	{
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static HashMap < String, IStorageUtility > storageRegistry = new HashMap < String, IStorageUtility >();
 		private static IStorageFactory storageFactory;
 		
@@ -120,7 +120,7 @@ namespace org.javarosa.core.services.storage
 		
 		public static void  repairAll()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(IStorageUtility storageUtility: storageRegistry.values())
 			{
 				storageUtility.repair();
@@ -131,7 +131,7 @@ namespace org.javarosa.core.services.storage
 		{
 			System.String[] returnVal = new System.String[storageRegistry.size()];
 			int i = 0;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String key: storageRegistry.keySet())
 			{
 				returnVal[i] = key;
@@ -142,7 +142,7 @@ namespace org.javarosa.core.services.storage
 		
 		public static void  halt()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(IStorageUtility storageUtility: storageRegistry.values())
 			{
 				storageUtility.close();

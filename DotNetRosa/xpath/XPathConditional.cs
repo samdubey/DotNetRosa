@@ -45,7 +45,7 @@ namespace org.javarosa.xpath
 			{
 				throw new FatalException("evalNodeset: must be path expression");
 			}
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			Set < TreeReference > triggers = new HashSet < TreeReference >();
 			getTriggers(expr, triggers, contextRef);
 			return triggers;
@@ -68,7 +68,7 @@ namespace org.javarosa.xpath
 				
 				for (int i = 0; i < ref_Renamed.size(); i++)
 				{
-					//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+					
 					if (predicates == null)
 					{
 						continue;
@@ -81,7 +81,7 @@ namespace org.javarosa.xpath
 					}
 					TreeReference predicateContext = ref_Renamed.getSubReference(i);
 					
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+					
 					for(XPathExpression predicate: predicates)
 					{
 						getTriggers(predicate, v, predicateContext);
@@ -169,15 +169,15 @@ namespace org.javarosa.xpath
 			return XPathFuncExpr.toString(evalRaw(model, evalContext));
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeReference > evalNodeset(FormInstance model, EvaluationContext evalContext)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		public List< TreeReference > evalNodeset(FormInstance model, EvaluationContext evalContext)
+		
+		
 		public Set < TreeReference > getTriggers(TreeReference contextRef)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void getTriggers(XPathExpression x, Set < TreeReference > v, TreeReference contextRef)
 		
 		public  override bool Equals(System.Object o)
@@ -213,8 +213,8 @@ namespace org.javarosa.xpath
 			return "xpath[" + expr.ToString() + "]";
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < Object > pivot(FormInstance model, EvaluationContext evalContext) throws UnpivotableExpressionException
+		
+		public List< Object > pivot(FormInstance model, EvaluationContext evalContext) throws UnpivotableExpressionException
 		//UPGRADE_NOTE: The following method implementation was automatically added to preserve functionality. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1306'"
 		public override int GetHashCode()
 		{

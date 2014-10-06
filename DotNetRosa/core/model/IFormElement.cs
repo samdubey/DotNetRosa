@@ -63,8 +63,8 @@ namespace org.javarosa.core.model
 			
 		}
 	}
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-	Vector < IFormElement > getChildren();
+	
+	List< IFormElement > getChildren();
 	
 	/// <param name="v">the children of this element, if it is capable of having
 	/// child elements.
@@ -72,28 +72,28 @@ namespace org.javarosa.core.model
 	/// <throws>  IllegalStateException if the element is incapable of </throws>
 	/// <summary> having children.
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-	void setChildren(Vector < IFormElement > v);
+	
+	void setChildren(List< IFormElement > v);
 	
 	/// <param name="fe">The child element to be added
 	/// </param>
 	/// <throws>  IllegalStateException if the element is incapable of </throws>
 	/// <summary> having children.
 	/// </summary>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void addChild(IFormElement fe);
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	IFormElement getChild(int i);
 	
 	/// <returns> A recursive count of how many elements are ancestors of this element.
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	int getDeepChildCount();
 	
 	/// <returns> The data reference for this element
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	IDataReference getBind();
 	
 	/// <summary> Registers a state observer for this element.
@@ -101,9 +101,9 @@ namespace org.javarosa.core.model
 	/// </summary>
 	/// <param name="qsl">
 	/// </param>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void registerStateObserver(FormElementStateListener qsl);
 	
 	/// <summary> Unregisters a state observer for this element.
@@ -111,9 +111,9 @@ namespace org.javarosa.core.model
 	/// </summary>
 	/// <param name="qsl">
 	/// </param>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void unregisterStateObserver(FormElementStateListener qsl);
 	
 	/// <summary> This method returns the regular
@@ -121,18 +121,18 @@ namespace org.javarosa.core.model
 	/// </summary>
 	/// <returns> &ltlabel&gt innertext or null (if innertext is not present).
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public String getLabelInnerText();
 	
 	
 	/// <returns>
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public String getAppearanceAttr();
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void setAppearanceAttr(String appearanceAttr);
 	
 	/// <summary> Capture additional attributes on a Question or Group
@@ -144,9 +144,9 @@ namespace org.javarosa.core.model
 	/// </param>
 	/// <param name="value">
 	/// </param>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	void setAdditionalAttribute(String namespace, String name, String value);
 	
 	/// <summary> Retrieve the value of an additional attribute on a Question or Group</summary>
@@ -156,7 +156,7 @@ namespace org.javarosa.core.model
 	/// </param>
 	/// <returns>
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	
 	public String getAdditionalAttribute(String namespace, String name);
 	
 	/// <summary> Retrieve all additional attributes on a Question or Group
@@ -164,9 +164,9 @@ namespace org.javarosa.core.model
 	/// </summary>
 	/// <returns>
 	/// </returns>
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-	public Vector < TreeElement > getAdditionalAttributes();
 	
-	//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+	public List< TreeElement > getAdditionalAttributes();
+	
+	
 	}
 }

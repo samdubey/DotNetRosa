@@ -177,8 +177,8 @@ namespace org.javarosa.core.model
 		private bool repeat; /// <summary>True if this is a "repeat", false if it is a "group" </summary>
 		private int id; /// <summary>The group number. </summary>
 		private IDataReference binding; /// <summary>reference to a location in the model to store data in </summary>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeElement > additionalAttributes = new Vector < TreeElement >();
+		
+		private List< TreeElement > additionalAttributes = new List< TreeElement >();
 		
 		private System.String labelInnerText;
 		private System.String appearanceAttr;
@@ -228,8 +228,8 @@ namespace org.javarosa.core.model
 			return null;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeElement > getAdditionalAttributes()
+		
+		public List< TreeElement > getAdditionalAttributes()
 		
 		public virtual void  addChild(IFormElement fe)
 		{

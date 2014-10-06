@@ -56,8 +56,8 @@ namespace org.javarosa.xpath
 			
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeReference > nodes;
+		
+		private List< TreeReference > nodes;
 		protected internal FormInstance instance;
 		protected internal EvaluationContext ec;
 		// these are purely for improved error messages
@@ -93,8 +93,8 @@ namespace org.javarosa.xpath
 		/// </param>
 		/// <param name="ec">
 		/// </param>
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public XPathNodeset(Vector < TreeReference > nodes, FormInstance instance, EvaluationContext ec)
+		
+		public XPathNodeset(List< TreeReference > nodes, FormInstance instance, EvaluationContext ec)
 		
 		public static XPathNodeset ConstructInvalidPathNodeset(System.String pathEvaluated, System.String originalPath)
 		{
@@ -107,13 +107,13 @@ namespace org.javarosa.xpath
 			return nodeset;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		protected
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void setReferences(Vector < TreeReference > nodes)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		protected Vector < TreeReference > getReferences()
+		protected
+		
+		void setReferences(List< TreeReference > nodes)
+		
+		
+		protected List< TreeReference > getReferences()
 		
 		
 		/// <returns> The value represented by this xpath. Can only be evaluated when this xpath represents exactly one

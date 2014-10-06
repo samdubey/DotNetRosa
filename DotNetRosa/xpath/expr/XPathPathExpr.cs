@@ -240,8 +240,8 @@ namespace org.javarosa.xpath.expr
 				if (step.predicates.Length > 0)
 				{
 					int refLevel = ref_Renamed.RefLevel;
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-					Vector < XPathExpression > v = new Vector < XPathExpression >();
+					
+					List< XPathExpression > v = new List< XPathExpression >();
 					for (int j = 0; j < step.predicates.Length; j++)
 					{
 						v.addElement(step.predicates[j]);
@@ -308,7 +308,7 @@ namespace org.javarosa.xpath.expr
 			//			return new XPathNodeset(nodesetRefs, m, ec);
 			//		}
 			
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			
 			//to fix conditions based on non-relevant data, filter the nodeset by relevancy
 			for (int i = 0; i < nodesetRefs.size(); i++)
@@ -578,8 +578,8 @@ namespace org.javarosa.xpath.expr
 		}
 		
 		new public System.Object pivot;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		(FormInstance model, EvaluationContext evalContext, Vector < Object > pivots, Object sentinal) throws UnpivotableExpressionException
+		
+		(FormInstance model, EvaluationContext evalContext, List< Object > pivots, Object sentinal) throws UnpivotableExpressionException
 		//UPGRADE_NOTE: The following method implementation was automatically added to preserve functionality. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1306'"
 		public override int GetHashCode()
 		{

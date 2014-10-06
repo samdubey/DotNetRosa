@@ -27,7 +27,7 @@ namespace org.javarosa.core.services.storage
 		{
 			return PREFILTER_FILTER;
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< E >
 		
 		public const int PREFILTER_EXCLUDE = - 1;
@@ -46,7 +46,7 @@ namespace org.javarosa.core.services.storage
 		/// if PREFILTER_FILTER, matches() will be called and record will be included or excluded based on return value
 		/// </returns>
 		public int preFilter;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		(int id, HashMap < String, Object > metaData)
 		
 		public abstract bool matches(E e);

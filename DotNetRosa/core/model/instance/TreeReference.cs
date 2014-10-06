@@ -18,6 +18,7 @@ using DataUtil = org.javarosa.core.util.DataUtil;
 using org.javarosa.core.util.externalizable;
 using XPathException = org.javarosa.xpath.XPathException;
 using XPathExpression = org.javarosa.xpath.expr.XPathExpression;
+using System.Collections.Generic;
 namespace org.javarosa.core.model.instance
 {
 	
@@ -150,8 +151,8 @@ namespace org.javarosa.core.model.instance
 		private int refLevel; //0 = context node, 1 = parent, 2 = grandparent ...
 		private int contextType;
 		private System.String instanceName = null;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeReferenceLevel > data = null;
+		
+		private List< TreeReferenceLevel > data = null;
 		
 		
 		public static TreeReference rootRef()
@@ -176,8 +177,8 @@ namespace org.javarosa.core.model.instance
 			instanceName = null; // null means the default instance
 			refLevel = 0;
 			contextType = CONTEXT_ABSOLUTE;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			data = new Vector < TreeReferenceLevel >();
+			
+			data = new List< TreeReferenceLevel >();
 		}
 		
 		public virtual int getMultiplicity(int index)
@@ -210,13 +211,11 @@ namespace org.javarosa.core.model.instance
 			add(new TreeReferenceLevel(name, mult).intern());
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void addPredicate(int key, Vector < XPathExpression > xpe)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < XPathExpression > getPredicate(int key)
+		public		void addPredicate(int key, List< XPathExpression > xpe);
+
+
+        public List<XPathExpression> getPredicate(int key);
 		
 		public virtual void  incrementRefLevel()
 		{
@@ -233,7 +232,7 @@ namespace org.javarosa.core.model.instance
 			TreeReference newRef = new TreeReference();
 			newRef.RefLevel = this.refLevel;
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(TreeReferenceLevel l: data)
 			{
 				newRef.add(l.shallowCopy());
@@ -297,7 +296,7 @@ namespace org.javarosa.core.model.instance
 					}
 				}
 				
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(TreeReferenceLevel l: data)
 				{
 					newRef.add(l.shallowCopy());
@@ -489,8 +488,8 @@ namespace org.javarosa.core.model.instance
 						int multA = this.getMultiplicity(i);
 						int multB = ref_Renamed.getMultiplicity(i);
 						
-						//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
-						//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+						
+						
 						
 						if (!nameA.Equals(nameB))
 						{
@@ -555,13 +554,13 @@ namespace org.javarosa.core.model.instance
 				
 				hash ^= getName(i).GetHashCode();
 				hash ^= mult.GetHashCode();
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				if (predicates == null)
 				{
 					continue;
 				}
 				int val = 0;
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(XPathExpression xpe: predicates)
 				{
 					hash ^= val;
@@ -658,7 +657,7 @@ namespace org.javarosa.core.model.instance
 			ExtUtil.write(out_Renamed, new ExtWrapNullable(instanceName));
 			ExtUtil.writeNumeric(out_Renamed, contextType);
 			ExtUtil.writeNumeric(out_Renamed, size());
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(TreeReferenceLevel l: data)
 			{
 				ExtUtil.write(out_Renamed, l);
@@ -757,8 +756,8 @@ namespace org.javarosa.core.model.instance
 			ret.refLevel = this.refLevel;
 			ret.contextType = this.contextType;
 			ret.instanceName = this.instanceName;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			ret.data = new Vector < TreeReferenceLevel >();
+			
+			ret.data = new List< TreeReferenceLevel >();
 			for (int i = 0; i <= level; ++i)
 			{
 				ret.data.addElement(this.data.elementAt(i));
@@ -768,7 +767,7 @@ namespace org.javarosa.core.model.instance
 		
 		public virtual bool hasPredicates()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(TreeReferenceLevel level: data)
 			{
 				if (level.getPredicates() != null)

@@ -22,10 +22,10 @@ namespace org.javarosa.core.model.instance.utils
 	public class CachingInstanceTemplateManager : InstanceTemplateManager
 	{
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private HashMap < Integer, FormInstance > templateCache;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < Integer > allowedFormTypes;
+		
+		private List< Integer > allowedFormTypes;
 		private bool restrictFormTypes;
 		
 		public CachingInstanceTemplateManager():this(true)
@@ -39,11 +39,11 @@ namespace org.javarosa.core.model.instance.utils
 		/// </param>
 		public CachingInstanceTemplateManager(bool restrictFormTypes)
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			this.templateCache = new HashMap < Integer, FormInstance >();
 			this.restrictFormTypes = restrictFormTypes;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			this.allowedFormTypes = new Vector < Integer >();
+			
+			this.allowedFormTypes = new List< Integer >();
 		}
 		
 		/// <summary> Remove all model templates from the cache. Frees up memory.</summary>

@@ -231,8 +231,8 @@ namespace org.javarosa.core.services.storage
 			storage.removeAll();
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < Integer > removeAll(EntityFilter ef)
+		
+		public List< Integer > removeAll(EntityFilter ef)
 		
 		public virtual bool exists(int id)
 		{

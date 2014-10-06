@@ -82,7 +82,7 @@ namespace org.javarosa.core.model.instance
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< T extends AbstractTreeElement < T >> implements Persistable
 		private int recordid = - 1;
 		
@@ -110,9 +110,9 @@ namespace org.javarosa.core.model.instance
 			return (TreeReference) ref_Renamed.Reference;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		abstract AbstractTreeElement < T > getBase();
 		
 		public abstract T getRoot();
@@ -134,7 +134,7 @@ namespace org.javarosa.core.model.instance
 				return null;
 			}
 			
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			T result = null;
 			for (int i = 0; i < ref_Renamed.size(); i++)
 			{
@@ -178,7 +178,7 @@ namespace org.javarosa.core.model.instance
 				return null;
 			
 			System.Collections.ArrayList nodes = System.Collections.ArrayList.Synchronized(new System.Collections.ArrayList(10));
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			for (int i = 0; i < ref_Renamed.size(); i++)
 			{
 				System.String name = ref_Renamed.getName(i);
@@ -238,7 +238,7 @@ namespace org.javarosa.core.model.instance
 				return null;
 			
 			T walker = null;
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			for (int i = 0; i < ref_Renamed.size(); i++)
 			{
 				System.String name = ref_Renamed.getName(i);

@@ -258,7 +258,7 @@ namespace org.javarosa.xform.parse
 			//so we really want to go through and convert the kxml parsed
 			//text (which have lots of characters each as their own string)
 			//into one single string
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			Stack < Element > q = new Stack < Element >();
 			
 			q.push(doc.getRootElement());
@@ -328,8 +328,8 @@ namespace org.javarosa.xform.parse
 			System.String name = e.getName();
 			
 			System.String[] suppressWarningArr = new System.String[]{"html", "head", "body", "xform", "chooseCaption", "addCaption", "addEmptyCaption", "delCaption", "doneCaption", "doneEmptyCaption", "mainHeader", "entryHeader", "delHeader"};
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > suppressWarning = new Vector < String >();
+			
+			List< String > suppressWarning = new List< String >();
 			for (int i = 0; i < suppressWarningArr.Length; i++)
 			{
 				suppressWarning.addElement(suppressWarningArr[i]);
@@ -354,7 +354,7 @@ namespace org.javarosa.xform.parse
 					}
 				}
 			}
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			HashMap < String, String > prefixes = new HashMap < String, String >();
 			for (int i = 0; i < e.getNamespaceCount(); ++i)
 			{
@@ -366,8 +366,8 @@ namespace org.javarosa.xform.parse
 				}
 			}
 			return prefixes;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < TreeReference > refs = new Vector < TreeReference >();
+			
+			List< TreeReference > refs = new List< TreeReference >();
 			
 			for (int i = 0; i < repeats.size(); i++)
 			{
@@ -485,7 +485,7 @@ namespace org.javarosa.xform.parse
 				{
 					ref_Renamed.setMultiplicity(j, TreeReference.INDEX_UNBOUND);
 				}
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				if (nodes.size() == 0)
 				{
 					//binding error; not a single node matches the repeat binding; will be reported later
@@ -535,7 +535,7 @@ namespace org.javarosa.xform.parse
 				}
 				else
 				{
-					//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+					
 					if (nodes.size() == 0)
 					{
 						System.String error = type + " bound to non-existent node: [" + tref.ToString() + "]";
@@ -584,15 +584,15 @@ namespace org.javarosa.xform.parse
 		private const int CONTAINER_GROUP = 1;
 		private const int CONTAINER_REPEAT = 2;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static HashMap < String, IElementHandler > topLevelHandlers;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static HashMap < String, IElementHandler > groupLevelHandlers;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static HashMap < String, Integer > typeMappings;
 		private static PrototypeFactoryDeprecated modelPrototypes;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private static Vector < SubmissionParser > submissionParsers;
+		
+		private static List< SubmissionParser > submissionParsers;
 		
 		//UPGRADE_ISSUE: Class hierarchy differences between 'java.io.Reader' and 'System.IO.StreamReader' may cause compilation errors. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1186'"
 		private System.IO.StreamReader _reader;
@@ -604,31 +604,31 @@ namespace org.javarosa.xform.parse
 		private Document _instDoc;
 		
 		private bool modelFound;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private HashMap < String, DataBinding > bindingsByID;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < DataBinding > bindings;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeReference > actionTargets;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeReference > repeats;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < ItemsetBinding > itemsets;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeReference > selectOnes;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeReference > selectMultis;
+		
+		private List< DataBinding > bindings;
+		
+		private List< TreeReference > actionTargets;
+		
+		private List< TreeReference > repeats;
+		
+		private List< ItemsetBinding > itemsets;
+		
+		private List< TreeReference > selectOnes;
+		
+		private List< TreeReference > selectMultis;
 		private Element mainInstanceNode; //top-level data node of the instance; saved off so it can be processed after the <bind>s
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < Element > instanceNodes;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < String > instanceNodeIdStrs;
+		
+		private List< Element > instanceNodes;
+		
+		private List< String > instanceNodeIdStrs;
 		private System.String defaultNamespace;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < String > itextKnownForms;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < String > namedActions;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
+		private List< String > itextKnownForms;
+		
+		private List< String > namedActions;
+		
 		private HashMap < String, IElementHandler > structuredActions;
 		
 		
@@ -645,8 +645,8 @@ namespace org.javarosa.xform.parse
 			initProcessingRules();
 			initTypeMappings();
 			modelPrototypes = new PrototypeFactoryDeprecated();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			submissionParsers = new Vector < SubmissionParser >();
+			
+			submissionParsers = new List< SubmissionParser >();
 		}
 		
 		private static void  initProcessingRules()
@@ -664,7 +664,7 @@ namespace org.javarosa.xform.parse
 			IElementHandler trigger = new AnonymousClassIElementHandler10();
 			IElementHandler upload = new AnonymousClassIElementHandler11();
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			groupLevelHandlers = new HashMap < String, IElementHandler >();
 			groupLevelHandlers.put("input", input);
 			groupLevelHandlers.put("secret", secret);
@@ -675,9 +675,9 @@ namespace org.javarosa.xform.parse
 			groupLevelHandlers.put("trigger", trigger); //multi-purpose now; need to dig deeper
 			groupLevelHandlers.put(Constants.XFTAG_UPLOAD, upload);
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			topLevelHandlers = new HashMap < String, IElementHandler >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String key: groupLevelHandlers.keySet())
 			{
 				topLevelHandlers.put(key, groupLevelHandlers.get_Renamed(key));
@@ -691,7 +691,7 @@ namespace org.javarosa.xform.parse
 		
 		private static void  initTypeMappings()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			typeMappings = new HashMap < String, Integer >();
 			typeMappings.put("string", (System.Int32) Constants.DATATYPE_TEXT); //xsd:
 			typeMappings.put("integer", (System.Int32) Constants.DATATYPE_INTEGER); //xsd:
@@ -726,37 +726,37 @@ namespace org.javarosa.xform.parse
 		private void  initState()
 		{
 			modelFound = false;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			bindingsByID = new HashMap < String, DataBinding >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			bindings = new Vector < DataBinding >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			actionTargets = new Vector < TreeReference >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			repeats = new Vector < TreeReference >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			itemsets = new Vector < ItemsetBinding >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			selectOnes = new Vector < TreeReference >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			selectMultis = new Vector < TreeReference >();
+			
+			bindings = new List< DataBinding >();
+			
+			actionTargets = new List< TreeReference >();
+			
+			repeats = new List< TreeReference >();
+			
+			itemsets = new List< ItemsetBinding >();
+			
+			selectOnes = new List< TreeReference >();
+			
+			selectMultis = new List< TreeReference >();
 			mainInstanceNode = null;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			instanceNodes = new Vector < Element >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			instanceNodeIdStrs = new Vector < String >();
+			
+			instanceNodes = new List< Element >();
+			
+			instanceNodeIdStrs = new List< String >();
 			repeatTree = null;
 			defaultNamespace = null;
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			itextKnownForms = new Vector < String >();
+			
+			itextKnownForms = new List< String >();
 			itextKnownForms.addElement("long");
 			itextKnownForms.addElement("short");
 			itextKnownForms.addElement("image");
 			itextKnownForms.addElement("audio");
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			namedActions = new Vector < String >();
+			
+			namedActions = new List< String >();
 			namedActions.addElement("rebuild");
 			namedActions.addElement("recalculate");
 			namedActions.addElement("revalidate");
@@ -765,14 +765,14 @@ namespace org.javarosa.xform.parse
 			namedActions.addElement("reset");
 			
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			structuredActions = new HashMap < String, IElementHandler >();
 			structuredActions.put("setvalue", new AnonymousClassIElementHandler12(this));
 		}
 		
 		internal XFormParserReporter reporter = new XFormParserReporter();
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		CacheTable < String > stringCache;
 		
 		//UPGRADE_ISSUE: Class hierarchy differences between 'java.io.Reader' and 'System.IO.StreamReader' may cause compilation errors. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1186'"
@@ -841,7 +841,7 @@ namespace org.javarosa.xform.parse
 		}
 		
 		public static Document getXMLDocument_Renamed_Field;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		(Reader reader, CacheTable < String > stringCache) throws IOException
 		
 		private void  parseDoc()
@@ -878,9 +878,9 @@ namespace org.javarosa.xform.parse
 			}
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void parseElement(Element e, Object parent, HashMap < String, IElementHandler > handlers)
 		
 		private void  parseTitle(Element e)
@@ -907,8 +907,8 @@ namespace org.javarosa.xform.parse
 		
 		private void  parseMeta(Element e)
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > usedAtts = new Vector < String >();
+			
+			List< String > usedAtts = new List< String >();
 			int attributes = e.getAttributeCount();
 			for (int i = 0; i < attributes; ++i)
 			{
@@ -931,10 +931,10 @@ namespace org.javarosa.xform.parse
 		//for ease of parsing, we assume a model comes before the controls, which isn't necessarily mandated by the xforms spec
 		private void  parseModel(Element e)
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > usedAtts = new Vector < String >(); //no attributes parsed in title.
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < Element > delayedParseElements = new Vector < Element >();
+			
+			List< String > usedAtts = new List< String >(); //no attributes parsed in title.
+			
+			List< Element > delayedParseElements = new List< Element >();
 			
 			if (modelFound)
 			{
@@ -1005,7 +1005,7 @@ namespace org.javarosa.xform.parse
 			}
 			
 			//Now parse out the submission/action blocks (we needed the binds to all be set before we could)
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(Element child: delayedParseElements)
 			{
 				System.String name = child.Name;
@@ -1110,7 +1110,7 @@ namespace org.javarosa.xform.parse
 			System.String action = submission.getAttributeValue(null, "action");
 			
 			SubmissionParser parser = new SubmissionParser();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(SubmissionParser p: submissionParsers)
 			{
 				if (p.matchesCustomMethod(method))
@@ -1517,8 +1517,8 @@ namespace org.javarosa.xform.parse
 		
 		private System.String parseOutput(Element e)
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > usedAtts = new Vector < String >();
+			
+			List< String > usedAtts = new List< String >();
 			usedAtts.addElement(REF_ATTR);
 			usedAtts.addElement(VALUE);
 			
@@ -2270,7 +2270,7 @@ namespace org.javarosa.xform.parse
 		private bool hasSpecialFormMapping(System.String textID, System.String locale)
 		{
 			//First check our guesses
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String guess: itextKnownForms)
 			{
 				if (hasITextMapping(textID + ";" + guess, locale))
@@ -2279,9 +2279,9 @@ namespace org.javarosa.xform.parse
 				}
 			}
 			//Otherwise this sucks and we have to test the keys
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			OrderedMap < String, PrefixTreeNode > table = _f.getLocalizer().getLocaleData(locale);
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String key: table.keySet())
 			{
 				if (key.startsWith(textID + ";"))
@@ -2604,7 +2604,7 @@ namespace org.javarosa.xform.parse
 		
 		
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static HashMap < String, String > loadNamespaces(Element e, FormInstance tree)
 		
 		public static TreeElement buildInstanceStructure(Element node, TreeElement parent)
@@ -2725,8 +2725,8 @@ namespace org.javarosa.xform.parse
 			return element;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeReference > getRepeatableRefs()
+		
+		private List< TreeReference > getRepeatableRefs()
 		
 		//pre-process and clean up instance regarding repeats; in particular:
 		// 1) flag all repeat-related nodes as repeatable
@@ -2746,11 +2746,11 @@ namespace org.javarosa.xform.parse
 		//flag all nodes identified by repeat bindings as repeatable
 		private void  flagRepeatables(FormInstance instance)
 		{
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			for (int i = 0; i < refs.size(); i++)
 			{
 				TreeReference ref_Renamed = refs.elementAt(i);
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				for (int j = 0; j < nodes.size(); j++)
 				{
 					TreeReference nref = nodes.elementAt(j);
@@ -2768,8 +2768,8 @@ namespace org.javarosa.xform.parse
 		{
 			repeatTree = buildRepeatTree(getRepeatableRefs(), instance.getRoot().Name);
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < TreeReference > missingTemplates = new Vector < TreeReference >();
+			
+			List< TreeReference > missingTemplates = new List< TreeReference >();
 			checkRepeatsForTemplate(instance, repeatTree, missingTemplates);
 			
 			removeInvalidTemplates(instance, repeatTree);
@@ -2781,20 +2781,20 @@ namespace org.javarosa.xform.parse
 		//return null if no repeats
 		//ignores (invalid) repeats that bind outside the top-level instance data node
 		private static FormInstance buildRepeatTree;
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		(Vector < TreeReference > repeatRefs, String topLevelName)
+		
+		(List< TreeReference > repeatRefs, String topLevelName)
 		
 		//checks which repeat bindings have explicit template nodes; returns a vector of the bindings that do not
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void checkRepeatsForTemplate(FormInstance instance, FormInstance repeatTree, Vector < TreeReference > missingTemplates)
+		
+		void checkRepeatsForTemplate(FormInstance instance, FormInstance repeatTree, List< TreeReference > missingTemplates)
 		
 		//helper function for checkRepeatsForTemplate
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private static
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void checkRepeatsForTemplate(TreeElement repeatTreeNode, TreeReference ref, FormInstance instance, Vector < TreeReference > missing)
+		
+		void checkRepeatsForTemplate(TreeElement repeatTreeNode, TreeReference ref, FormInstance instance, List< TreeReference > missing)
 		
 		//iterates through instance and removes template nodes that are not valid. a template is invalid if:
 		//  it is declared for a node that is not repeatable
@@ -2842,10 +2842,10 @@ namespace org.javarosa.xform.parse
 		}
 		
 		//if repeatables have no template node, duplicate first as template
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void createMissingTemplates(FormInstance instance, Vector < TreeReference > missingTemplates)
+		
+		void createMissingTemplates(FormInstance instance, List< TreeReference > missingTemplates)
 		
 		//trim repeatable children of newly created template nodes; we trim because the templates are supposed to be devoid of 'data',
 		//  and # of repeats for a given repeat node is a kind of data. trust me
@@ -2888,12 +2888,12 @@ namespace org.javarosa.xform.parse
 		//check repeat sets for homogeneity
 		private void  checkHomogeneity(FormInstance instance)
 		{
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			for (int i = 0; i < refs.size(); i++)
 			{
 				TreeReference ref_Renamed = refs.elementAt(i);
 				TreeElement template = null;
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				for (int j = 0; j < nodes.size(); j++)
 				{
 					TreeReference nref = nodes.elementAt(j);
@@ -2929,7 +2929,7 @@ namespace org.javarosa.xform.parse
 				}
 				else
 				{
-					//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+					
 					if (nodes.size() == 0)
 					{
 						reporter.warning(XFormParserReporter.TYPE_ERROR_PRONE, "<bind> defined for a node that doesn't exist [" + ref_Renamed.ToString() + "]. The node's name was probably changed and the bind should be updated. ", null);
@@ -2938,7 +2938,7 @@ namespace org.javarosa.xform.parse
 			}
 			
 			//check <repeat>s (can't bind to '/' or '/data')
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			for (int i = 0; i < refs.size(); i++)
 			{
 				TreeReference ref_Renamed = refs.elementAt(i);
@@ -2950,8 +2950,8 @@ namespace org.javarosa.xform.parse
 			}
 			
 			//check control/group/repeat bindings (bound nodes exist, question can't bind to '/')
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > bindErrors = new Vector < String >();
+			
+			List< String > bindErrors = new List< String >();
 			verifyControlBindings(_f, instance, bindErrors);
 			if (bindErrors.size() > 0)
 			{
@@ -2978,7 +2978,7 @@ namespace org.javarosa.xform.parse
 			for (int i = 0; i < actionTargets.size(); i++)
 			{
 				TreeReference target = actionTargets.elementAt(i);
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				if (nodes.size() == 0)
 				{
 					throw new XFormParseException("Invalid Action - Targets non-existent node: " + target.toString(true));
@@ -2986,10 +2986,10 @@ namespace org.javarosa.xform.parse
 			}
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void verifyControlBindings(IFormElement fe, FormInstance instance, Vector < String > errors)
+		
+		void verifyControlBindings(IFormElement fe, FormInstance instance, List< String > errors)
 		
 		private void  verifyRepeatMemberBindings(IFormElement fe, FormInstance instance, GroupDef parentRepeat)
 		{
@@ -3019,8 +3019,8 @@ namespace org.javarosa.xform.parse
 				
 				//check that, in the instance, current node is not within the scope of any closer repeat binding
 				//build a list of all the node's instance ancestors
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				Vector < TreeElement > repeatAncestry = new Vector < TreeElement >();
+				
+				List< TreeElement > repeatAncestry = new List< TreeElement >();
 				TreeElement repeatNode = (repeatTree == null?null:repeatTree.getRoot());
 				if (repeatNode != null)
 				{
@@ -3152,7 +3152,7 @@ namespace org.javarosa.xform.parse
 			{
 				DataBinding bind = bindings.elementAt(i);
 				TreeReference ref_Renamed = FormInstance.unpackReference(bind.Reference);
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				
 				if (nodes.size() > 0)
 				{
@@ -3223,13 +3223,13 @@ namespace org.javarosa.xform.parse
 		{
 			for (int h = 0; h < 2; h++)
 			{
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				int type = (h == 0?Constants.DATATYPE_CHOICE:Constants.DATATYPE_CHOICE_LIST);
 				
 				for (int i = 0; i < selectRefs.size(); i++)
 				{
 					TreeReference ref_Renamed = selectRefs.elementAt(i);
-					//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+					
 					for (int j = 0; j < nodes.size(); j++)
 					{
 						TreeElement node = instance.resolveReference(nodes.elementAt(j));
@@ -3269,7 +3269,7 @@ namespace org.javarosa.xform.parse
 			
 			if (hasElements)
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				HashMap < String, Integer > multiplicities = new HashMap < String, Integer >(); //stores max multiplicity seen for a given node name thus far
 				for (int i = 0; i < numChildren; i++)
 				{
@@ -3325,21 +3325,21 @@ namespace org.javarosa.xform.parse
 		
 		private void  checkDependencyCycles()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < TreeReference > vertices = new Vector < TreeReference >();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < TreeReference [] > edges = new Vector < TreeReference [] >();
+			
+			List< TreeReference > vertices = new List< TreeReference >();
+			
+			List< TreeReference [] > edges = new List< TreeReference [] >();
 			
 			//build graph
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(TreeReference trigger: _f.triggerIndex.keySet())
 			{
 				if (!vertices.contains(trigger))
 					vertices.addElement(trigger);
 				
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				Vector < TreeReference > targets = new Vector < TreeReference >();
+				
+				
+				List< TreeReference > targets = new List< TreeReference >();
 				for (int i = 0; i < triggered.size(); i++)
 				{
 					Triggerable t = (Triggerable) triggered.elementAt(i);
@@ -3643,9 +3643,9 @@ namespace org.javarosa.xform.parse
 			return elementString;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void setStringCache(CacheTable < String > stringCache)
 		static XFormParser()
 		{

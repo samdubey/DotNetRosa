@@ -155,8 +155,8 @@ namespace org.javarosa.core.model
 		private System.String preloadParams;
 		public System.String constraintMessage;
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < TreeElement > additionalAttrs = new Vector < TreeElement >();
+		
+		private List< TreeElement > additionalAttrs = new List< TreeElement >();
 		
 		public DataBinding()
 		{
@@ -171,8 +171,8 @@ namespace org.javarosa.core.model
 			TreeElement.setAttribute(null, additionalAttrs, namespace_Renamed, name, value_Renamed);
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeElement > getAdditionalAttributes()
+		
+		public List< TreeElement > getAdditionalAttributes()
 		
 		/* (non-Javadoc)
 		* @see org.javarosa.core.services.storage.utilities.Externalizable#readExternal(java.io.DataInputStream)

@@ -82,16 +82,16 @@ namespace org.javarosa.core.model
 		
 		private TreeReference destRef; //ref that identifies the repeated nodes resulting from this itemset
 		//not serialized -- set by QuestionDef.setDynamicChoices()
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		private Vector < SelectChoice > choices; //dynamic choices -- not serialized, obviously
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < SelectChoice > getChoices()
+		private List< SelectChoice > choices; //dynamic choices -- not serialized, obviously
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
+		public List< SelectChoice > getChoices()
+		
+		
 		public
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void setChoices(Vector < SelectChoice > choices, Localizer localizer)
+		
+		void setChoices(List< SelectChoice > choices, Localizer localizer)
 		
 		public virtual void  clearChoices()
 		{

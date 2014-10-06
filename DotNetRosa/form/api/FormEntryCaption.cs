@@ -39,8 +39,8 @@ namespace org.javarosa.form.api
 			}
 			
 			int numRepetitions = NumRepetitions;
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > reps = new Vector < String >();
+			
+			List< String > reps = new List< String >();
 			for (int i = 0; i < numRepetitions; i++)
 			{
 				reps.addElement(getRepetitionText("choose", form.descendIntoRepeat(index, i), false));
@@ -388,7 +388,7 @@ namespace org.javarosa.form.api
 				}
 			}
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			HashMap < String, Object > vars = new HashMap < String, Object >();
 			vars.put("name", title);
 			vars.put("n", (System.Int32) count);
@@ -428,7 +428,7 @@ namespace org.javarosa.form.api
 					return title + " " + ix + "/" + count;
 				}
 				
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				HashMap < String, Object > vars = new HashMap < String, Object >();
 				vars.put("name", title);
 				vars.put("i", (System.Int32) ix);
@@ -442,8 +442,8 @@ namespace org.javarosa.form.api
 			}
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < String > getRepetitionsText()
+		
+		public List< String > getRepetitionsText()
 		
 		//UPGRADE_NOTE: Field 'EnclosingInstance' was added to class 'RepeatOptions' to access its enclosing instance. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1019'"
 		public class RepeatOptions

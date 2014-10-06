@@ -25,8 +25,8 @@ namespace org.javarosa.core.util
 			{
 				throw new System.SystemException("Can't get the strings from a finalized Prefix Tree");
 			}
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < String > v = new Vector < String >();
+			
+			List< String > v = new List< String >();
 			root.decompose(v, "");
 			return v;
 		}
@@ -124,7 +124,7 @@ namespace org.javarosa.core.util
 						{
 							//See if we have any breaks which might make more heuristic sense than simply grabbing the biggest
 							//difference
-							//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+							
 							for(char c: delimiters)
 							{
 								int sepLen = - 1;
@@ -195,8 +195,8 @@ namespace org.javarosa.core.util
 			return current;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < String > getStrings()
+		
+		public List< String > getStrings()
 		
 		public override System.String ToString()
 		{

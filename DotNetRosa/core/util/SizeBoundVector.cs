@@ -54,8 +54,8 @@ namespace org.javarosa.core.util
 			}
 			
 		}
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		< E > extends Vector < E >
+		
+		< E > extends List< E >
 		
 		public SizeBoundVector(int sizeLimit)
 		{

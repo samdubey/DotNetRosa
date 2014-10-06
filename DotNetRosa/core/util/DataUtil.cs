@@ -14,10 +14,10 @@ namespace org.javarosa.core.util
 		}
 		private void  InitBlock()
 		{
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < Integer > u = new Vector < Integer >();
+			
+			List< Integer > u = new List< Integer >();
 			//Efficiency?
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(Integer i: a)
 			{
 				if (b.contains(i))
@@ -47,7 +47,7 @@ namespace org.javarosa.core.util
 		}
 		
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public static Vector < Integer > union(Vector < Integer > a, Vector < Integer > b)
+		
+		public static List< Integer > union(List< Integer > a, List< Integer > b)
 	}
 }

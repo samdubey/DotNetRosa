@@ -61,7 +61,7 @@ namespace org.javarosa.xpath
 				{
 					return ;
 				}
-				//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+				
 				
 				//to fix conditions based on non-relevant data, filter the nodeset by relevancy
 				for (int i = 0; i < nodes.size(); i++)
@@ -141,8 +141,8 @@ namespace org.javarosa.xpath
 			return base.toArgList();
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		protected Vector < TreeReference > getReferences()
+		
+		protected List< TreeReference > getReferences()
 		
 		public override int size()
 		{

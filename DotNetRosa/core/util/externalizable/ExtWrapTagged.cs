@@ -21,7 +21,7 @@ namespace org.javarosa.core.util.externalizable
 	{
 		public static sbyte[] WRAPPER_TAG = new sbyte[]{(sbyte) SupportClass.Identity(0xff), (sbyte) SupportClass.Identity(0xff), (sbyte) SupportClass.Identity(0xff), (sbyte) SupportClass.Identity(0xff)}; //must be same length as PrototypeFactory.CLASS_HASH_SIZE
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public static HashMap < Class, Integer > WRAPPER_CODES;
 		
 		/* serialization */
@@ -77,7 +77,7 @@ namespace org.javarosa.core.util.externalizable
 				
 				//find wrapper indicated by code
 				ExternalizableWrapper type = null;
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				for(Object key: WRAPPER_CODES.keySet())
 				{
 					System.Type t = (System.Type) key;
@@ -163,7 +163,7 @@ namespace org.javarosa.core.util.externalizable
 		static ExtWrapTagged()
 		{
 			{
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+				
 				WRAPPER_CODES = new HashMap < Class, Integer >();
 				WRAPPER_CODES.put(typeof(ExtWrapNullable), 0x00);
 				WRAPPER_CODES.put(typeof(ExtWrapList), 0x20);

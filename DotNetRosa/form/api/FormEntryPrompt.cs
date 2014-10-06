@@ -34,6 +34,7 @@ using Logger = org.javarosa.core.services.Logger;
 using NoLocalizedTextException = org.javarosa.core.util.NoLocalizedTextException;
 using UnregisteredLocaleException = org.javarosa.core.util.UnregisteredLocaleException;
 using IQuestionWidget = org.javarosa.formmanager.view.IQuestionWidget;
+using System.Collections.Generic;
 namespace org.javarosa.form.api
 {
 	
@@ -108,15 +109,15 @@ namespace org.javarosa.form.api
 				{
 					if (itemset.valueRef != null)
 					{
-						//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
-						//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-						Vector < String > preselectedValues = new Vector < String >();
+						
+						
+						List<String> preselectedValues = new List< String >();
 						
 						//determine which selections are already present in the answer
 						if (itemset.copyMode)
 						{
 							TreeReference destRef = itemset.getDestRef().contextualize(mTreeElement.Ref);
-							//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+							
 							for (int i = 0; i < subNodes.size(); i++)
 							{
 								TreeElement node = form.MainInstance.resolveReference(subNodes.elementAt(i));
@@ -126,18 +127,18 @@ namespace org.javarosa.form.api
 						}
 						else
 						{
-							//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-							Vector < Selection > sels = new Vector < Selection >();
+							
+							List< Selection > sels = new List< Selection >();
 							IAnswerData data = mTreeElement.Value;
 							if (data is SelectMultiData)
 							{
-								//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-								sels =(Vector < Selection >) data.getValue();
+								
+								sels =(List< Selection >) data.getValue();
 							}
 							else if (data is SelectOneData)
 							{
-								//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-								sels = new Vector < Selection >();
+								
+								sels = new List< Selection >();
 								sels.addElement((Selection) data.Value);
 							}
 							for (int i = 0; i < sels.size(); i++)
@@ -147,8 +148,8 @@ namespace org.javarosa.form.api
 						}
 						
 						//populate 'selection' with the corresponding choices (matching 'value') from the dynamic choiceset
-						//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-						Vector < Selection > selection = new Vector < Selection >();
+						
+						List< Selection > selection = new List< Selection >();
 						for (int i = 0; i < preselectedValues.size(); i++)
 						{
 							System.String value_Renamed = preselectedValues.elementAt(i);
@@ -223,9 +224,9 @@ namespace org.javarosa.form.api
 					else if (data is SelectMultiData)
 					{
 						StringBuilder b = new StringBuilder();
-						//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-						Vector < Selection > values =(Vector < Selection >) data.getValue();
-						//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+						
+						List< Selection > values =(List< Selection >) data.getValue();
+						
 						for(Selection value: values)
 						{
 							b.append(this.getSelectItemText(value_Renamed)).append(" ");
@@ -385,10 +386,10 @@ namespace org.javarosa.form.api
 			}
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeElement > getBindAttributes()
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < SelectChoice > getSelectChoices()
+		
+		public List< TreeElement > getBindAttributes()
+		
+		public List< SelectChoice > getSelectChoices()
 		
 		public virtual void  expireDynamicChoices()
 		{

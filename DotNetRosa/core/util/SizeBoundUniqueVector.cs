@@ -14,7 +14,7 @@ namespace org.javarosa.core.util
 	/// </author>
 	public class SizeBoundUniqueVector
 	{
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		< E > extends SizeBoundVector < E >
 		
 		public SizeBoundUniqueVector(int sizeLimit):base(sizeLimit)

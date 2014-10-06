@@ -39,11 +39,11 @@ namespace org.javarosa.core.model.condition
 			this.formInstances = formInstances;
 			this.instance = instance;
 			this.contextNode = TreeReference.rootRef();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			functionHandlers = new HashMap < String, IFunctionHandler >();
 			//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 			variables = new System.Collections.Hashtable();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			for(String var: variables.keySet())
 			{
 				//UPGRADE_TODO: Method 'java.util.HashMap.get' was converted to 'System.Collections.Hashtable.Item' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMapget_javalangObject'"
@@ -70,12 +70,12 @@ namespace org.javarosa.core.model.condition
 				throw new System.SystemException("Unable to expand reference " + ref_Renamed.toString(true) + ", no appropriate instance in evaluation context");
 			}
 			
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-			Vector < TreeReference > v = new Vector < TreeReference >();
+			
+			List< TreeReference > v = new List< TreeReference >();
 			expandReference(ref_Renamed, baseInstance, baseInstance.getRoot().Ref, v, includeTemplates);
 			return v;
 			int depth = workingRef.size();
-			//UPGRADE_NOTE: There is an untranslated Statement.  Please refer to original code. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1153'"
+			
 			
 			//check to see if we've matched fully
 			if (depth == sourceRef.size())
@@ -93,9 +93,9 @@ namespace org.javarosa.core.model.condition
 				//Copy predicates for batch fetch
 				if (predicates != null)
 				{
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-					Vector < XPathExpression > predCopy = new Vector < XPathExpression >();
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+					
+					List< XPathExpression > predCopy = new List< XPathExpression >();
+					
 					for(XPathExpression xpe: predicates)
 					{
 						predCopy.addElement(xpe);
@@ -104,12 +104,12 @@ namespace org.javarosa.core.model.condition
 				}
 				//ETHERTON: Is this where we should test for predicates?
 				int mult = sourceRef.getMultiplicity(depth);
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				Vector < TreeReference > set = new Vector < TreeReference >();
+				
+				List< TreeReference > set = new List< TreeReference >();
 				
 				TreeElement node = instance.resolveReference(workingRef);
-				//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-				Vector < TreeReference > passingSet = new Vector < TreeReference >();
+				
+				List< TreeReference > passingSet = new List< TreeReference >();
 				
 				{
 					if (node.NumChildren > 0)
@@ -170,9 +170,9 @@ namespace org.javarosa.core.model.condition
 				if (predicates != null)
 				{
 					bool firstTime = true;
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-					Vector < TreeReference > passed = new Vector < TreeReference >();
-					//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+					
+					List< TreeReference > passed = new List< TreeReference >();
+					
 					for(XPathExpression xpe: predicates)
 					{
 						for (int i = 0; i < set_Renamed.size(); ++i)
@@ -289,7 +289,7 @@ namespace org.javarosa.core.model.condition
 			
 		}
 		private TreeReference contextNode; //unambiguous ref used as the anchor for relative paths
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private HashMap < String, IFunctionHandler > functionHandlers;
 		//UPGRADE_TODO: Class 'java.util.HashMap' was converted to 'System.Collections.Hashtable' which has a different behavior. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1073_javautilHashMap'"
 		private System.Collections.Hashtable variables;
@@ -301,7 +301,7 @@ namespace org.javarosa.core.model.condition
 		
 		private System.String outputTextForm = null; //Responsible for informing itext what form is requested if relevant
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private HashMap < String, FormInstance > formInstances;
 		
 		private TreeReference original;
@@ -340,20 +340,20 @@ namespace org.javarosa.core.model.condition
 			this.contextNode = context;
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public EvaluationContext(EvaluationContext base, HashMap < String, FormInstance > formInstances, TreeReference context)
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public EvaluationContext(FormInstance instance, HashMap < String, FormInstance > formInstances, EvaluationContext base)
 		
 		public EvaluationContext(FormInstance instance)
 		{
 			InitBlock();
-			//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+			
 			this(instance, new HashMap < String, FormInstance >());
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public EvaluationContext(FormInstance instance, HashMap < String, FormInstance > formInstances)
 		
 		public virtual FormInstance getInstance(System.String id)
@@ -366,9 +366,9 @@ namespace org.javarosa.core.model.condition
 			functionHandlers.put(fh.Name, fh);
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		public
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		void setVariables(HashMap < String, ? > variables)
 		
 		public virtual void  setVariable(System.String name, System.Object value_Renamed)
@@ -414,8 +414,8 @@ namespace org.javarosa.core.model.condition
 			return variables[name];
 		}
 		
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeReference > expandReference(TreeReference ref)
+		
+		public List< TreeReference > expandReference(TreeReference ref)
 		
 		// take in a potentially-ambiguous ref, and return a vector of refs for all nodes that match the passed-in ref
 		// meaning, search out all repeated nodes that match the pattern of the passed-in ref
@@ -424,8 +424,8 @@ namespace org.javarosa.core.model.condition
 		// return null if ref is relative, otherwise return vector of refs (but vector will be empty is no refs match)
 		// '/' returns {'/'}
 		// can handle sub-repetitions (e.g., {/a[1]/b[1], /a[1]/b[2], /a[2]/b[1]})
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		public Vector < TreeReference > expandReference(TreeReference ref, boolean includeTemplates)
+		
+		public List< TreeReference > expandReference(TreeReference ref, boolean includeTemplates)
 		
 		// recursive helper function for expandReference
 		// sourceRef: original path we're matching against
@@ -433,10 +433,10 @@ namespace org.javarosa.core.model.condition
 		// workingRef: explicit path that refers to the current node
 		// refs: Vector to collect matching paths; if 'node' is a target node that
 		// matches sourceRef, templateRef is added to refs
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
+		
 		private
-		//UPGRADE_ISSUE: The following fragment of code could not be parsed and was not converted. "ms-help://MS.VSCC.v80/dv_commoner/local/redirect.htm?index='!DefaultContextWindowIndex'&keyword='jlca1156'"
-		void expandReference(TreeReference sourceRef, FormInstance instance, TreeReference workingRef, Vector < TreeReference > refs, boolean includeTemplates)
+		
+		void expandReference(TreeReference sourceRef, FormInstance instance, TreeReference workingRef, List< TreeReference > refs, boolean includeTemplates)
 		
 		private EvaluationContext rescope(TreeReference treeRef, int currentContextPosition)
 		{
