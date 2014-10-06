@@ -1,5 +1,6 @@
 /// <summary> </summary>
 using System;
+using System.Collections;
 namespace org.javarosa.core.api
 {
 	
@@ -14,7 +15,7 @@ namespace org.javarosa.core.api
 			{
 				try
 				{
-					return (State) SupportClass.StackSupport.Pop(statesToReturnTo);
+					return (State) statesToReturnTo.Pop();
 				}
 				catch (System.ArgumentOutOfRangeException e)
 				{
@@ -24,10 +25,10 @@ namespace org.javarosa.core.api
 			
 			set
 			{
-				statesToReturnTo.Add(value);
+				statesToReturnTo.Push(value);
 			}
 			
 		}
-		private static System.Collections.ArrayList statesToReturnTo = new System.Collections.ArrayList();
+        private static Stack statesToReturnTo = new Stack();
 	}
 }

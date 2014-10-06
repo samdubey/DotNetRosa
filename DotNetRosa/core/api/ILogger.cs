@@ -47,11 +47,11 @@ namespace org.javarosa.core.api
 	
 	public
 	
-	void serializeLogs(StreamLogSerializer serializer) throws IOException;
+	void serializeLogs(StreamLogSerializer serializer);
 	
 	public
 	
-	void serializeLogs(StreamLogSerializer serializer, int limit) throws IOException;
+	void serializeLogs(StreamLogSerializer serializer, int limit);
 	
 	
 	public
